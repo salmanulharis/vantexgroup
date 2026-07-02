@@ -5,6 +5,10 @@ import { viteSingleFile } from 'vite-plugin-singlefile'
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), viteSingleFile()],
+  build: {
+    outDir: "docs",
+    emptyOutDir: true,
+  },
   server: {
     host: true,
     port: 3000,
