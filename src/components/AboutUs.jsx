@@ -4,7 +4,7 @@ import { Eye, Target, BookmarkCheck } from "lucide-react";
 
 export default function AboutUs() {
   return (
-    <section id="about" className="py-32 bg-white overflow-hidden relative">
+    <section id="about" className="py-32 bg-white overflow-hidden relative select-none">
       {/* Background visual element */}
       <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-slate-50 rounded-full blur-[100px] pointer-events-none opacity-60" />
 
@@ -13,11 +13,11 @@ export default function AboutUs() {
           
           {/* Left Column: Who We Are */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="lg:col-span-6 space-y-8"
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="lg:col-span-6 space-y-8 will-change-transform"
           >
             <div className="space-y-3">
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
@@ -64,11 +64,11 @@ export default function AboutUs() {
             
             {/* Vision Card */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="p-8 rounded-2xl bg-white border-l-4 border-accent-gold shadow-[0_10px_25px_-12px_rgba(7,17,32,0.04)] relative overflow-hidden group border border-slate-100"
+              viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="p-8 rounded-2xl bg-white border-l-4 border-accent-gold shadow-[0_10px_25px_-12px_rgba(7,17,32,0.04)] relative overflow-hidden group border border-slate-100 lg:hover:bg-slate-50/50 transition-all duration-300 will-change-transform"
             >
               <div className="flex items-start gap-5">
                 <div className="p-2.5 rounded-xl bg-accent-gold/5 text-accent-gold mt-1">
@@ -87,11 +87,11 @@ export default function AboutUs() {
 
             {/* Mission Card */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-              className="p-8 rounded-2xl bg-white border-l-4 border-primary-navy shadow-[0_10px_25px_-12px_rgba(7,17,32,0.04)] relative overflow-hidden group border border-slate-100"
+              viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+              className="p-8 rounded-2xl bg-white border-l-4 border-primary-navy shadow-[0_10px_25px_-12px_rgba(7,17,32,0.04)] relative overflow-hidden group border border-slate-100 lg:hover:bg-slate-50/50 transition-all duration-300 will-change-transform"
             >
               <div className="flex items-start gap-5">
                 <div className="p-2.5 rounded-xl bg-primary-navy/5 text-primary-navy mt-1">

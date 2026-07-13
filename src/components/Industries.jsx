@@ -50,7 +50,7 @@ const industriesList = [
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-32 bg-[#FAF9F6]">
+    <section id="industries" className="py-32 bg-[#FAF9F6] select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header */}
@@ -74,13 +74,13 @@ export default function Industries() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
-                className="p-8 rounded-2xl bg-white border border-slate-200/50 hover:border-accent-gold/45 hover:shadow-[0_12px_30px_-12px_rgba(7,17,32,0.05)] transition-all duration-300 text-center flex flex-col items-center group min-h-60 justify-between"
+                viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+                transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.03 }}
+                className="p-8 rounded-2xl bg-white border border-slate-200/50 lg:hover:border-accent-gold/30 lg:hover:shadow-[0_8px_20px_-10px_rgba(7,17,32,0.03)] lg:hover:-translate-y-[3px] transition-all duration-300 text-center flex flex-col items-center group min-h-60 justify-between will-change-transform"
               >
-                <div className="w-12 h-12 rounded-full bg-[#071120] text-white flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-primary-navy transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-[#071120] text-white flex items-center justify-center mb-6 lg:group-hover:bg-accent-gold lg:group-hover:text-primary-navy transition-all duration-300">
                   <Icon className="w-5 h-5 stroke-[1.5]" />
                 </div>
                 <div>

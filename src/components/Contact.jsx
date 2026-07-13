@@ -30,17 +30,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 bg-white relative">
+    <section id="contact" className="py-32 bg-white relative select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
           
           {/* Left Column: Info & Map */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="lg:col-span-5 space-y-8"
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="lg:col-span-5 space-y-8 will-change-transform"
           >
             <div className="space-y-3">
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
@@ -59,7 +59,7 @@ export default function Contact() {
             <div className="space-y-4">
               
               {/* Address card */}
-              <div className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-200/50 hover:border-slate-200 hover:shadow-sm transition-all duration-300">
+              <div className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-200/50 lg:hover:border-slate-300 lg:hover:shadow-[0_4px_12px_rgba(7,17,32,0.02)] transition-all duration-300">
                 <div className="w-9 h-9 rounded-xl bg-primary-navy text-white flex items-center justify-center flex-shrink-0 mt-0.5">
                   <MapPin className="w-4 h-4 stroke-[1.5]" />
                 </div>
@@ -76,7 +76,7 @@ export default function Contact() {
               </div>
 
               {/* Email card */}
-              <div className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-200/50 hover:border-slate-200 hover:shadow-sm transition-all duration-300">
+              <div className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-200/50 lg:hover:border-slate-300 lg:hover:shadow-[0_4px_12px_rgba(7,17,32,0.02)] transition-all duration-300">
                 <div className="w-9 h-9 rounded-xl bg-primary-navy text-white flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Mail className="w-4 h-4 stroke-[1.5]" />
                 </div>
@@ -91,7 +91,7 @@ export default function Contact() {
               </div>
 
               {/* Phone card */}
-              <div className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-200/50 hover:border-slate-200 hover:shadow-sm transition-all duration-300">
+              <div className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-200/50 lg:hover:border-slate-300 lg:hover:shadow-[0_4px_12px_rgba(7,17,32,0.02)] transition-all duration-300">
                 <div className="w-9 h-9 rounded-xl bg-primary-navy text-white flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Phone className="w-4 h-4 stroke-[1.5]" />
                 </div>
@@ -100,7 +100,7 @@ export default function Contact() {
                     Phone Number
                   </h4>
                   <p className="text-xs text-slate-600 font-semibold">
-                    <a href="tel:+919946430289" className="hover:text-accent-gold transition-colors">
+                    <a href="tel:+919946430289" className="lg:hover:text-accent-gold transition-colors">
                       +91 99464 30289
                     </a>
                   </p>
@@ -108,7 +108,7 @@ export default function Contact() {
               </div>
 
               {/* Business Hours */}
-              <div className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-200/50 hover:border-slate-200 hover:shadow-sm transition-all duration-300">
+              <div className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-200/50 lg:hover:border-slate-300 lg:hover:shadow-[0_4px_12px_rgba(7,17,32,0.02)] transition-all duration-300">
                 <div className="w-9 h-9 rounded-xl bg-primary-navy text-white flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Clock className="w-4 h-4 stroke-[1.5]" />
                 </div>
@@ -146,7 +146,7 @@ export default function Contact() {
                   href="https://maps.google.com/?q=Kottakkal+Municipality"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-[10px] font-bold text-accent-gold uppercase tracking-wider hover:text-white transition-colors gap-1 border-b border-accent-gold/30 pb-0.5 hover:border-white"
+                  className="inline-flex items-center text-[10px] font-bold text-accent-gold uppercase tracking-wider lg:hover:text-white transition-colors gap-1 border-b border-accent-gold/30 pb-0.5 lg:hover:border-white"
                 >
                   Open in Google Maps →
                 </a>
@@ -156,11 +156,11 @@ export default function Contact() {
 
           {/* Right Column: Contact Form */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-            className="lg:col-span-7 bg-[#FAF9F6] border border-slate-200/60 p-8 md:p-10 rounded-3xl"
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+            className="lg:col-span-7 bg-[#FAF9F6] border border-slate-200/60 p-8 md:p-10 rounded-3xl will-change-transform"
           >
             {/* Header Form */}
             <div className="mb-8">
@@ -276,7 +276,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
-                className="w-full inline-flex items-center justify-center px-6 py-4 rounded-full bg-primary-navy text-white text-xs font-bold uppercase tracking-widest hover:bg-accent-gold hover:text-primary-navy transition-all duration-300 disabled:opacity-75 disabled:cursor-not-allowed group gap-2"
+                className="w-full inline-flex items-center justify-center px-6 py-4 rounded-full bg-primary-navy text-white text-xs font-bold uppercase tracking-widest lg:hover:bg-accent-gold lg:hover:text-primary-navy transition-all duration-300 disabled:opacity-75 disabled:cursor-not-allowed group gap-2 cursor-pointer"
               >
                 {isSubmitting ? (
                   <>

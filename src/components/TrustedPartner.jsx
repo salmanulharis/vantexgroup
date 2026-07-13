@@ -27,17 +27,17 @@ export default function TrustedPartner() {
   ];
 
   return (
-    <section id="trusted-partner" className="py-32 bg-[#FAF9F6] border-b border-slate-100">
+    <section id="trusted-partner" className="py-32 bg-[#FAF9F6] border-b border-slate-100 select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
           
           {/* Left Column: Heading and Paragraphs */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="lg:col-span-6 space-y-6"
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="lg:col-span-6 space-y-6 will-change-transform"
           >
             <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
               Trusted Partner
@@ -65,13 +65,13 @@ export default function TrustedPartner() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
-                  className="p-8 rounded-2xl bg-white border border-slate-200/50 hover:border-accent-gold/45 hover:shadow-[0_12px_30px_-12px_rgba(7,17,32,0.06)] transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between h-56"
+                  viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+                  transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.03 }}
+                  className="p-8 rounded-2xl bg-white border border-slate-200/50 lg:hover:border-accent-gold/25 lg:hover:shadow-[0_8px_20px_-10px_rgba(7,17,32,0.03)] transition-all duration-300 group flex flex-col justify-between h-56 will-change-transform"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-[#071120] text-white flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-primary-navy transition-colors duration-300">
+                  <div className="w-11 h-11 rounded-xl bg-[#071120] text-white flex items-center justify-center mb-6 lg:group-hover:bg-accent-gold lg:group-hover:text-primary-navy transition-colors duration-300">
                     <Icon className="w-5 h-5 stroke-[1.5]" />
                   </div>
                   <div>

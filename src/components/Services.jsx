@@ -71,22 +71,22 @@ export default function Services() {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.03,
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 8 },
     show: { 
       opacity: 1, 
       y: 0, 
-      transition: { type: "tween", ease: "easeOut", duration: 0.4 }
+      transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }
     },
   };
 
   return (
-    <section id="services" className="py-32 bg-[#071120] text-white relative">
+    <section id="services" className="py-32 bg-[#071120] text-white relative select-none">
       {/* Background accents */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-[#071120] to-black pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary-navy/20 rounded-full blur-[140px] pointer-events-none" />
@@ -112,7 +112,7 @@ export default function Services() {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-30px" }}
+          viewport={{ once: true, margin: "0px 0px -40px 0px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {servicesList.map((service, index) => {
@@ -121,11 +121,11 @@ export default function Services() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="relative group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-accent-gold/30 hover:bg-white/[0.04] transition-all duration-300 hover:translate-y-[-2px] flex flex-col justify-between min-h-64"
+                className="relative group p-8 rounded-2xl bg-white/[0.01] border border-white/5 lg:hover:border-accent-gold/25 lg:hover:bg-white/[0.02] transition-all duration-300 flex flex-col justify-between min-h-64 will-change-transform"
               >
                 <div>
                   {/* Icon */}
-                  <div className="w-10 h-10 rounded-xl bg-accent-gold/10 text-accent-gold flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-[#071120] transition-colors duration-300">
+                  <div className="w-10 h-10 rounded-xl bg-accent-gold/10 text-accent-gold flex items-center justify-center mb-6 lg:group-hover:bg-accent-gold lg:group-hover:text-[#071120] transition-colors duration-300">
                     <Icon className="w-5 h-5 stroke-[1.5]" />
                   </div>
                   {/* Title */}
@@ -139,7 +139,7 @@ export default function Services() {
                 </div>
                 
                 {/* Visual Accent Corner indicator */}
-                <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-transparent group-hover:bg-accent-gold transition-colors duration-300" />
+                <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-transparent lg:group-hover:bg-accent-gold transition-colors duration-300" />
               </motion.div>
             );
           })}

@@ -12,7 +12,7 @@ export default function CTA() {
   };
 
   return (
-    <section className="py-28 bg-gradient-to-br from-[#0A192F] to-[#071120] text-white relative overflow-hidden">
+    <section className="py-28 bg-gradient-to-br from-[#0A192F] to-[#071120] text-white relative overflow-hidden select-none">
       {/* Background visual graphics */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
         <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-accent-gold rounded-full blur-[120px]" />
@@ -23,11 +23,11 @@ export default function CTA() {
           
           {/* Text content */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="lg:col-span-8 space-y-5"
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="lg:col-span-8 space-y-5 will-change-transform"
           >
             <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
               Get Started
@@ -42,16 +42,16 @@ export default function CTA() {
 
           {/* Action buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-            className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-start lg:items-stretch"
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+            className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-start lg:items-stretch will-change-transform"
           >
             <a
               href="#contact"
               onClick={(e) => handleScrollTo(e, "contact")}
-              className="inline-flex items-center justify-center px-6 py-4 rounded-full bg-accent-gold text-[#071120] font-bold text-xs uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-md hover:shadow-lg gap-2 text-center"
+              className="inline-flex items-center justify-center px-6 py-4 rounded-full bg-accent-gold text-[#071120] font-bold text-xs uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-md hover:shadow-lg gap-2 text-center cursor-pointer"
             >
               Contact Us
               <ArrowRight className="w-4 h-4" />
@@ -59,7 +59,7 @@ export default function CTA() {
             <a
               href="#contact"
               onClick={(e) => handleScrollTo(e, "contact")}
-              className="inline-flex items-center justify-center px-6 py-4 rounded-full bg-transparent border border-white/15 text-white font-bold text-xs uppercase tracking-wider hover:bg-white/5 hover:border-white/40 transition-colors gap-2 text-center"
+              className="inline-flex items-center justify-center px-6 py-4 rounded-full bg-transparent border border-white/15 text-white font-bold text-xs uppercase tracking-wider hover:bg-white/5 hover:border-white/40 transition-colors gap-2 text-center cursor-pointer"
             >
               <CalendarDays className="w-4 h-4 text-accent-gold" />
               Schedule a Consultation

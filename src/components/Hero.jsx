@@ -41,7 +41,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-40 pb-24 flex flex-col justify-center overflow-hidden bg-[#071120] text-white"
+      className="relative min-h-screen pt-40 pb-24 flex flex-col justify-center overflow-hidden bg-[#071120] text-white select-none"
     >
       {/* Background Graphic Accents */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -56,20 +56,20 @@ export default function Hero() {
         {/* Hero Text Section */}
         <div className="max-w-4xl mt-4">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold mb-8"
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold mb-8 will-change-transform"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-accent-gold animate-pulse" />
             Empowering Enterprise Vision
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight font-heading leading-[1.08] mb-8"
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.05 }}
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight font-heading leading-[1.08] mb-8 will-change-transform"
           >
             BUILDING BUSINESSES. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-gold via-white to-accent-gold bg-[length:200%_auto] animate-gradient font-black">
@@ -78,20 +78,20 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed mb-12 max-w-2xl"
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+            className="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed mb-12 max-w-2xl will-change-transform"
           >
             We partner with organizations to accelerate growth, unlock opportunities, and build sustainable long-term value through strategic advisory, business development, partnerships, and expansion initiatives.
           </motion.p>
 
           {/* Action Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-            className="flex flex-wrap gap-4 mb-24"
+            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.15 }}
+            className="flex flex-wrap gap-4 mb-24 will-change-transform"
           >
             <a
               href="#contact"
@@ -113,10 +113,10 @@ export default function Hero() {
 
         {/* Rebuilt Statistics Matrix */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-12 border-t border-white/10 pt-10"
+          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-12 border-t border-white/10 pt-10 will-change-transform"
         >
           {stats.map((stat, index) => {
             const Icon = stat.icon;
@@ -126,7 +126,7 @@ export default function Hero() {
                 className="group flex flex-col justify-between space-y-4"
               >
                 <div className="flex justify-between items-start">
-                  <div className="text-accent-gold group-hover:text-white transition-colors duration-300">
+                  <div className="text-accent-gold lg:group-hover:text-white transition-colors duration-300">
                     <Icon className="w-5 h-5 stroke-[1.5]" />
                   </div>
                 </div>

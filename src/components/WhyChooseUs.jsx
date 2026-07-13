@@ -56,7 +56,7 @@ const advantages = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="py-32 bg-white border-b border-slate-100 relative">
+    <section id="why-choose-us" className="py-32 bg-white border-b border-slate-100 relative select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header */}
@@ -70,21 +70,21 @@ export default function WhyChooseUs() {
           <div className="h-[2px] w-16 bg-accent-gold rounded-full mt-4" />
         </div>
 
-        {/* Feature Grid (Rebuilt as a clean McKinsey-style corporate grid) */}
+        {/* Feature Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 overflow-hidden rounded-2xl border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
           {advantages.map((adv, index) => {
             const Icon = adv.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.04 }}
-                className="p-8 bg-white hover:bg-slate-50/50 transition-all duration-300 group flex flex-col justify-between min-h-64"
+                viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+                transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.03 }}
+                className="p-8 bg-white lg:hover:bg-[#FAF9F6]/50 transition-all duration-300 group flex flex-col justify-between min-h-64 will-change-transform"
               >
                 <div>
-                  <div className="w-9 h-9 rounded-lg bg-primary-navy/5 text-primary-navy flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-primary-navy transition-colors duration-300">
+                  <div className="w-9 h-9 rounded-lg bg-primary-navy/5 text-primary-navy flex items-center justify-center mb-6 lg:group-hover:bg-accent-gold lg:group-hover:text-primary-navy transition-colors duration-300">
                     <Icon className="w-4 h-4 stroke-[1.5]" />
                   </div>
                   <h3 className="text-sm font-bold text-primary-navy tracking-tight mb-2 font-heading">

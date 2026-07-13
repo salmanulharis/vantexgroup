@@ -37,7 +37,7 @@ const steps = [
 
 export default function GrowthProcess() {
   return (
-    <section id="process" className="py-32 bg-white overflow-hidden relative">
+    <section id="process" className="py-32 bg-white overflow-hidden relative select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header */}
@@ -56,7 +56,7 @@ export default function GrowthProcess() {
 
         {/* Desktop Timeline */}
         <div className="relative hidden lg:block">
-          {/* Horizontal connecting line (Sleek gold line) */}
+          {/* Horizontal connecting line */}
           <div className="absolute top-[35px] left-[10%] right-[10%] h-[1.5px] bg-accent-gold/25 -z-10" />
           
           <div className="grid grid-cols-5 gap-6">
@@ -65,15 +65,15 @@ export default function GrowthProcess() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
-                  className="flex flex-col items-center text-center px-4 group"
+                  viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+                  transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.03 }}
+                  className="flex flex-col items-center text-center px-4 group will-change-transform"
                 >
                   {/* Step bubble */}
-                  <div className="w-[70px] h-[70px] rounded-full bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:border-accent-gold transition-all duration-300 relative">
-                    <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center text-primary-navy group-hover:bg-[#071120] group-hover:text-white transition-colors duration-300">
+                  <div className="w-[70px] h-[70px] rounded-full bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm lg:group-hover:border-accent-gold transition-all duration-300 relative">
+                    <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center text-primary-navy lg:group-hover:bg-[#071120] lg:group-hover:text-white transition-colors duration-300">
                       <Icon className="w-5 h-5 stroke-[1.5]" />
                     </div>
                     {/* Small number badge */}
@@ -101,15 +101,15 @@ export default function GrowthProcess() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -12 }}
+                initial={{ opacity: 0, x: -8 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
-                className="relative group"
+                viewport={{ once: true, margin: "0px 0px -30px 0px" }}
+                transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.03 }}
+                className="relative group will-change-transform"
               >
                 {/* Step bubble */}
-                <div className="absolute -left-[43px] top-0 w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm group-hover:border-accent-gold transition-colors">
-                  <Icon className="w-4 h-4 text-primary-navy group-hover:text-accent-gold transition-colors stroke-[1.5]" />
+                <div className="absolute -left-[43px] top-0 w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm lg:group-hover:border-accent-gold transition-colors">
+                  <Icon className="w-4 h-4 text-primary-navy lg:group-hover:text-accent-gold transition-colors stroke-[1.5]" />
                 </div>
                 
                 <div className="flex items-center gap-3 mb-2">
