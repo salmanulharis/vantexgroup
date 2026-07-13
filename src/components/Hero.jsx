@@ -3,15 +3,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Users, Briefcase, TrendingUp, Target } from "lucide-react";
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   const stats = [
     {
       icon: Briefcase,
@@ -65,9 +56,9 @@ export default function Hero() {
         {/* Hero Text Section */}
         <div className="max-w-4xl mt-4">
           <motion.div
-            initial={{ opacity: 0, y: isMobile ? 8 : 15 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: isMobile ? 0.4 : 0.6 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-accent-gold animate-pulse" />
@@ -75,9 +66,9 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: isMobile ? 12 : 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: isMobile ? 0.45 : 0.7, delay: 0.1 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight font-heading leading-[1.08] mb-8"
           >
             BUILDING BUSINESSES. <br />
@@ -87,9 +78,9 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: isMobile ? 12 : 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: isMobile ? 0.5 : 0.7, delay: 0.2 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed mb-12 max-w-2xl"
           >
             We partner with organizations to accelerate growth, unlock opportunities, and build sustainable long-term value through strategic advisory, business development, partnerships, and expansion initiatives.
@@ -97,15 +88,15 @@ export default function Hero() {
 
           {/* Action Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: isMobile ? 12 : 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: isMobile ? 0.55 : 0.7, delay: 0.3 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
             className="flex flex-wrap gap-4 mb-24"
           >
             <a
               href="#contact"
               onClick={(e) => handleScrollTo(e, "contact")}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-accent-gold text-primary-navy font-bold text-xs uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-lg shadow-accent-gold/10 hover:shadow-white/10 group gap-2"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-accent-gold text-[#071120] font-bold text-xs uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-lg shadow-accent-gold/10 hover:shadow-white/10 group gap-2"
             >
               Get in Touch
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -120,11 +111,11 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Rebuilt Statistics Matrix (Minimal McKinsey-like divider layout) */}
+        {/* Rebuilt Statistics Matrix */}
         <motion.div
-          initial={{ opacity: 0, y: isMobile ? 12 : 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: isMobile ? 0.6 : 0.8, delay: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-12 border-t border-white/10 pt-10"
         >
           {stats.map((stat, index) => {

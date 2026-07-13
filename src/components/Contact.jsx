@@ -3,15 +3,6 @@ import { motion } from "framer-motion";
 import { MapPin, Mail, Clock, Send, CheckCircle, Phone } from "lucide-react";
 
 export default function Contact() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,10 +36,10 @@ export default function Contact() {
           
           {/* Left Column: Info & Map */}
           <motion.div
-            initial={{ opacity: 0, y: isMobile ? 8 : 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-            transition={{ duration: isMobile ? 0.45 : 0.6 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="lg:col-span-5 space-y-8"
           >
             <div className="space-y-3">
@@ -64,7 +55,7 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* Contact details list (Clean grid layout) */}
+            {/* Contact details list */}
             <div className="space-y-4">
               
               {/* Address card */}
@@ -133,7 +124,7 @@ export default function Contact() {
 
             </div>
 
-            {/* Google Map Placeholder (Styled Premium Card) */}
+            {/* Google Map Placeholder */}
             <div className="relative h-60 rounded-2xl overflow-hidden bg-[#071120] border border-slate-800 shadow-sm flex flex-col items-center justify-center p-6 text-center">
               <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-25" />
               <div className="absolute top-0 right-0 p-3 bg-white/5 border-b border-l border-white/10 rounded-bl-xl text-accent-gold text-[9px] font-bold uppercase tracking-wider">
@@ -163,12 +154,12 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Right Column: Contact Form (Premium Off-white Card block) */}
+          {/* Right Column: Contact Form */}
           <motion.div
-            initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-            transition={{ duration: isMobile ? 0.45 : 0.6, delay: 0.1 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
             className="lg:col-span-7 bg-[#FAF9F6] border border-slate-200/60 p-8 md:p-10 rounded-3xl"
           >
             {/* Header Form */}

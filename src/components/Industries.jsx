@@ -49,15 +49,6 @@ const industriesList = [
 ];
 
 export default function Industries() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   return (
     <section id="industries" className="py-32 bg-[#FAF9F6]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -83,10 +74,10 @@ export default function Industries() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: isMobile ? 0.98 : 0.96 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-                transition={{ duration: isMobile ? 0.35 : 0.5, delay: isMobile ? index * 0.03 : index * 0.05 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
                 className="p-8 rounded-2xl bg-white border border-slate-200/50 hover:border-accent-gold/45 hover:shadow-[0_12px_30px_-12px_rgba(7,17,32,0.05)] transition-all duration-300 text-center flex flex-col items-center group min-h-60 justify-between"
               >
                 <div className="w-12 h-12 rounded-full bg-[#071120] text-white flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-primary-navy transition-all duration-300">

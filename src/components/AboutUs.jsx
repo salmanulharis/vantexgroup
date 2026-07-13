@@ -3,15 +3,6 @@ import { motion } from "framer-motion";
 import { Eye, Target, BookmarkCheck } from "lucide-react";
 
 export default function AboutUs() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   return (
     <section id="about" className="py-32 bg-white overflow-hidden relative">
       {/* Background visual element */}
@@ -22,10 +13,10 @@ export default function AboutUs() {
           
           {/* Left Column: Who We Are */}
           <motion.div
-            initial={{ opacity: 0, y: isMobile ? 8 : 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-            transition={{ duration: isMobile ? 0.45 : 0.6 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="lg:col-span-6 space-y-8"
           >
             <div className="space-y-3">
@@ -68,15 +59,15 @@ export default function AboutUs() {
             </div>
           </motion.div>
 
-          {/* Right Column: Mission and Vision (Editorial Minimal Blocks) */}
+          {/* Right Column: Mission and Vision */}
           <div className="lg:col-span-6 flex flex-col justify-center gap-8">
             
             {/* Vision Card */}
             <motion.div
-              initial={{ opacity: 0, x: isMobile ? 10 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-              transition={{ duration: isMobile ? 0.45 : 0.6 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="p-8 rounded-2xl bg-white border-l-4 border-accent-gold shadow-[0_10px_25px_-12px_rgba(7,17,32,0.04)] relative overflow-hidden group border border-slate-100"
             >
               <div className="flex items-start gap-5">
@@ -96,10 +87,10 @@ export default function AboutUs() {
 
             {/* Mission Card */}
             <motion.div
-              initial={{ opacity: 0, x: isMobile ? 10 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-              transition={{ duration: isMobile ? 0.45 : 0.6, delay: 0.1 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
               className="p-8 rounded-2xl bg-white border-l-4 border-primary-navy shadow-[0_10px_25px_-12px_rgba(7,17,32,0.04)] relative overflow-hidden group border border-slate-100"
             >
               <div className="flex items-start gap-5">

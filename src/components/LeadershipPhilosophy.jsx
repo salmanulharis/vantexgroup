@@ -3,15 +3,6 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 export default function LeadershipPhilosophy() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   return (
     <section className="relative py-36 bg-[#071120] text-white overflow-hidden">
       {/* Background accents */}
@@ -24,8 +15,8 @@ export default function LeadershipPhilosophy() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 0.1, scale: 1 }}
-          viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-          transition={{ duration: isMobile ? 0.45 : 0.6 }}
+          viewport={{ once: true, margin: "-30px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex justify-center text-accent-gold"
         >
           <Quote className="w-16 h-16 stroke-[1.25]" />
@@ -33,10 +24,10 @@ export default function LeadershipPhilosophy() {
 
         {/* Content quote block */}
         <motion.div
-          initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-          transition={{ duration: isMobile ? 0.45 : 0.6, delay: 0.1 }}
+          viewport={{ once: true, margin: "-30px" }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
           className="space-y-8"
         >
           <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">

@@ -55,15 +55,6 @@ const advantages = [
 ];
 
 export default function WhyChooseUs() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   return (
     <section id="why-choose-us" className="py-32 bg-white border-b border-slate-100 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -86,10 +77,10 @@ export default function WhyChooseUs() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: isMobile ? 8 : 15 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-                transition={{ duration: isMobile ? 0.35 : 0.5, delay: isMobile ? index * 0.03 : index * 0.05 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.04 }}
                 className="p-8 bg-white hover:bg-slate-50/50 transition-all duration-300 group flex flex-col justify-between min-h-64"
               >
                 <div>

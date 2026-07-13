@@ -3,15 +3,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays } from "lucide-react";
 
 export default function CTA() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
@@ -32,10 +23,10 @@ export default function CTA() {
           
           {/* Text content */}
           <motion.div
-            initial={{ opacity: 0, y: isMobile ? 8 : 15 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-            transition={{ duration: isMobile ? 0.45 : 0.6 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="lg:col-span-8 space-y-5"
           >
             <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
@@ -51,10 +42,10 @@ export default function CTA() {
 
           {/* Action buttons */}
           <motion.div
-            initial={{ opacity: 0, y: isMobile ? 8 : 15 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-            transition={{ duration: isMobile ? 0.45 : 0.6, delay: 0.1 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
             className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-start lg:items-stretch"
           >
             <a

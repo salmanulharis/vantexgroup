@@ -67,26 +67,17 @@ const servicesList = [
 ];
 
 export default function Services() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   const containerVariants = {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: isMobile ? 0.04 : 0.07,
+        staggerChildren: 0.05,
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: isMobile ? 10 : 20 },
+    hidden: { opacity: 0, y: 15 },
     show: { 
       opacity: 1, 
       y: 0, 
@@ -121,7 +112,7 @@ export default function Services() {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: isMobile ? "-15px" : "-50px" }}
+          viewport={{ once: true, margin: "-30px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {servicesList.map((service, index) => {

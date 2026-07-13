@@ -3,15 +3,6 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Compass, BarChart4, Network } from "lucide-react";
 
 export default function TrustedPartner() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   const features = [
     {
       icon: ShieldCheck,
@@ -42,10 +33,10 @@ export default function TrustedPartner() {
           
           {/* Left Column: Heading and Paragraphs */}
           <motion.div
-            initial={{ opacity: 0, y: isMobile ? 8 : 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-            transition={{ duration: isMobile ? 0.45 : 0.6 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="lg:col-span-6 space-y-6"
           >
             <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
@@ -67,17 +58,17 @@ export default function TrustedPartner() {
             </p>
           </motion.div>
 
-          {/* Right Column: Grid of Icon Cards (Rebuilt as borderless elegant consulting cells) */}
+          {/* Right Column: Grid of Icon Cards */}
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-                  transition={{ duration: isMobile ? 0.35 : 0.5, delay: isMobile ? index * 0.05 : index * 0.1 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
                   className="p-8 rounded-2xl bg-white border border-slate-200/50 hover:border-accent-gold/45 hover:shadow-[0_12px_30px_-12px_rgba(7,17,32,0.06)] transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between h-56"
                 >
                   <div className="w-11 h-11 rounded-xl bg-[#071120] text-white flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-primary-navy transition-colors duration-300">

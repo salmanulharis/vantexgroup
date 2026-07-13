@@ -36,15 +36,6 @@ const steps = [
 ];
 
 export default function GrowthProcess() {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   return (
     <section id="process" className="py-32 bg-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -74,13 +65,13 @@ export default function GrowthProcess() {
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-                  transition={{ duration: isMobile ? 0.35 : 0.5, delay: isMobile ? index * 0.05 : index * 0.1 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
                   className="flex flex-col items-center text-center px-4 group"
                 >
-                  {/* Rebuilt Step bubble (Minimalist consulting ring) */}
+                  {/* Step bubble */}
                   <div className="w-[70px] h-[70px] rounded-full bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:border-accent-gold transition-all duration-300 relative">
                     <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center text-primary-navy group-hover:bg-[#071120] group-hover:text-white transition-colors duration-300">
                       <Icon className="w-5 h-5 stroke-[1.5]" />
@@ -110,10 +101,10 @@ export default function GrowthProcess() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: isMobile ? -8 : -15 }}
+                initial={{ opacity: 0, x: -12 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: isMobile ? "-20px" : "-50px" }}
-                transition={{ duration: isMobile ? 0.35 : 0.5, delay: isMobile ? index * 0.04 : index * 0.08 }}
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
                 className="relative group"
               >
                 {/* Step bubble */}
