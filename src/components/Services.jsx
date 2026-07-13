@@ -107,7 +107,14 @@ export default function Services() {
         </div>
 
         {/* Services List Layout (Numbered rows with accordion descriptions for desktop & mobile) */}
-        <div className="border-t border-[#071120]/10 divide-y divide-[#071120]/10">
+        <div
+          className="border-t border-[#071120]/10 divide-y divide-[#071120]/10"
+          onMouseLeave={() => {
+            if (window.matchMedia("(hover: hover)").matches) {
+              setActiveIndex(null);
+            }
+          }}
+        >
           {servicesList.map((service, index) => {
             const Icon = service.icon;
             const isOpen = activeIndex === index;
@@ -118,6 +125,11 @@ export default function Services() {
                 key={index}
                 className="group py-6 md:py-8 cursor-pointer select-none transition-all"
                 onClick={() => setActiveIndex(isOpen ? null : index)}
+                onMouseEnter={() => {
+                  if (window.matchMedia("(hover: hover)").matches) {
+                    setActiveIndex(index);
+                  }
+                }}
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   

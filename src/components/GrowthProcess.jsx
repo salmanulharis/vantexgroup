@@ -92,6 +92,11 @@ export default function GrowthProcess() {
                     : "border-transparent hover:border-[#071120]/30 hover:bg-[#FAF9F6]/20"
                 }`}
                 onClick={() => setActiveStep(idx)}
+                onMouseEnter={() => {
+                  if (window.matchMedia("(hover: hover)").matches) {
+                    setActiveStep(idx);
+                  }
+                }}
               >
                 <div className="flex items-center gap-4">
                   <span className={`text-xs font-bold font-sans ${activeStep === idx ? "text-[#C9A14A]" : "text-[#071120]/40"}`}>
