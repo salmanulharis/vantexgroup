@@ -8,7 +8,7 @@ const LinkedInIcon = ({ className = "w-4 h-4" }) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
@@ -23,10 +23,14 @@ const TwitterIcon = ({ className = "w-4 h-4" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    fill="currentColor"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
   </svg>
 );
 
@@ -40,26 +44,26 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#071120] text-slate-400 border-t border-slate-900/60 py-20 select-none">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <footer className="bg-[#071120] text-[#FAF9F6]/50 border-t border-[#FAF9F6]/5 py-12 md:py-20 select-none">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-6">
             <a href="#home" onClick={(e) => handleScrollTo(e, "home")} className="flex items-center gap-3 group">
-              <div className="w-9 h-9 flex items-center justify-center">
+              <div className="w-8 h-8 flex items-center justify-center">
                 <Logo className="w-full h-full object-contain" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold tracking-wider text-white font-heading leading-none">
+              <div className="flex flex-col leading-none">
+                <span className="text-lg font-light tracking-[0.18em] text-white font-heading">
                   VANTEX
                 </span>
-                <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent-gold mt-1 leading-none">
+                <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-[#C9A14A] mt-0.5">
                   Group
                 </span>
               </div>
             </a>
-            <p className="text-xs leading-relaxed max-w-sm font-normal">
+            <p className="text-xs leading-relaxed max-w-xs font-light">
               An enterprise-grade growth advisory group co-creating sustainable value and connecting capital, strategy, and execution.
             </p>
             <div className="flex gap-4">
@@ -67,7 +71,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white/5 text-slate-400 flex items-center justify-center hover:bg-accent-gold hover:text-primary-navy transition-colors duration-300"
+                className="w-8 h-8 border border-white/10 text-white/50 flex items-center justify-center hover:border-[#C9A14A] hover:text-[#C9A14A] transition-all duration-300"
                 aria-label="LinkedIn Profile"
               >
                 <LinkedInIcon className="w-3.5 h-3.5" />
@@ -76,7 +80,7 @@ export default function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white/5 text-slate-400 flex items-center justify-center hover:bg-accent-gold hover:text-primary-navy transition-colors duration-300"
+                className="w-8 h-8 border border-white/10 text-white/50 flex items-center justify-center hover:border-[#C9A14A] hover:text-[#C9A14A] transition-all duration-300"
                 aria-label="Twitter Profile"
               >
                 <TwitterIcon className="w-3.5 h-3.5" />
@@ -86,27 +90,27 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2 space-y-5">
-            <h4 className="text-[10px] font-bold text-white tracking-[0.25em] uppercase">
+            <h4 className="text-[10px] font-bold text-white tracking-widest uppercase">
               Navigation
             </h4>
-            <ul className="space-y-3 text-xs font-normal">
+            <ul className="space-y-3 text-xs font-light">
               <li>
-                <a href="#home" onClick={(e) => handleScrollTo(e, "home")} className="hover:text-accent-gold transition-colors">
+                <a href="#home" onClick={(e) => handleScrollTo(e, "home")} className="hover:text-[#C9A14A] transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" onClick={(e) => handleScrollTo(e, "about")} className="hover:text-accent-gold transition-colors">
+                <a href="#about" onClick={(e) => handleScrollTo(e, "about")} className="hover:text-[#C9A14A] transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-accent-gold transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
                   Our Services
                 </a>
               </li>
               <li>
-                <a href="#why-choose-us" onClick={(e) => handleScrollTo(e, "why-choose-us")} className="hover:text-accent-gold transition-colors">
+                <a href="#why-choose-us" onClick={(e) => handleScrollTo(e, "why-choose-us")} className="hover:text-[#C9A14A] transition-colors">
                   Why Vantex
                 </a>
               </li>
@@ -115,27 +119,27 @@ export default function Footer() {
 
           {/* Services Column */}
           <div className="lg:col-span-3 space-y-5">
-            <h4 className="text-[10px] font-bold text-white tracking-[0.25em] uppercase">
+            <h4 className="text-[10px] font-bold text-white tracking-widest uppercase">
               Core Practices
             </h4>
-            <ul className="space-y-3 text-xs font-normal">
+            <ul className="space-y-3 text-xs font-light">
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-accent-gold transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
                   Strategic Advisory
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-accent-gold transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
                   Business Development
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-accent-gold transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
                   Market Expansion
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-accent-gold transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
                   Healthcare Advisory
                 </a>
               </li>
@@ -143,26 +147,26 @@ export default function Footer() {
           </div>
 
           {/* Address Column */}
-          <div className="lg:col-span-3 space-y-5 text-xs leading-relaxed font-normal">
-            <h4 className="text-[10px] font-bold text-white tracking-[0.25em] uppercase">
+          <div className="lg:col-span-3 space-y-5 text-xs leading-relaxed font-light">
+            <h4 className="text-[10px] font-bold text-white tracking-widest uppercase">
               Contact
             </h4>
             <ul className="space-y-3.5">
-              <li className="flex gap-2.5">
-                <MapPin className="w-3.5 h-3.5 text-accent-gold flex-shrink-0 mt-0.5" />
+              <li className="flex gap-3">
+                <MapPin className="w-3.5 h-3.5 text-[#C9A14A] flex-shrink-0 mt-0.5" />
                 <span>
                   Ernahikal Arcade, Near Kottakkal Municipality, Kottakkal, India
                 </span>
               </li>
-              <li className="flex gap-2.5">
-                <Mail className="w-3.5 h-3.5 text-accent-gold flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@vantegroup.org" className="hover:text-accent-gold transition-colors">
+              <li className="flex gap-3">
+                <Mail className="w-3.5 h-3.5 text-[#C9A14A] flex-shrink-0 mt-0.5" />
+                <a href="mailto:info@vantegroup.org" className="hover:text-[#C9A14A] transition-colors">
                   info@vantegroup.org
                 </a>
               </li>
-              <li className="flex gap-2.5">
-                <Phone className="w-3.5 h-3.5 text-accent-gold flex-shrink-0 mt-0.5" />
-                <a href="tel:+919946430289" className="hover:text-accent-gold transition-colors">
+              <li className="flex gap-3">
+                <Phone className="w-3.5 h-3.5 text-[#C9A14A] flex-shrink-0 mt-0.5" />
+                <a href="tel:+919946430289" className="hover:text-[#C9A14A] transition-colors">
                   +91 99464 30289
                 </a>
               </li>
@@ -172,13 +176,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-900/60 pt-8 flex flex-col md:flex-row items-center justify-between text-[10px] gap-4 font-normal">
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-[10px] gap-4 font-light">
           <p>
             © {new Date().getFullYear()} Vantex Group (Vantegroup.org). All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-accent-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-accent-gold transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
 

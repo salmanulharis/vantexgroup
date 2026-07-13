@@ -4,47 +4,51 @@ import { Quote } from "lucide-react";
 
 export default function LeadershipPhilosophy() {
   return (
-    <section className="relative py-36 bg-[#071120] text-white overflow-hidden select-none">
-      {/* Background accents */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary-navy/30 via-[#071120] to-black pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-gold/5 rounded-full blur-[160px] pointer-events-none" />
+    <section
+      className="py-20 md:py-32 bg-[#FAF9F6] text-[#071120] overflow-hidden relative select-none"
+    >
+      {/* Editorial Watermark Lines */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
+        <div className="absolute top-1/2 left-0 right-0 h-px bg-[#071120]" />
+        <div className="absolute top-0 bottom-0 left-1/3 w-px bg-[#071120]" />
+      </div>
 
       <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10 text-center space-y-8">
         
-        {/* Editorial Quote Icon */}
+        {/* Large Decorative Quote Watermark */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 0.1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 0.05, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -40px 0px" }}
-          transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="flex justify-center text-accent-gold will-change-transform"
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="flex justify-center text-[#C9A14A] will-change-transform pointer-events-none select-none"
         >
-          <Quote className="w-16 h-16 stroke-[1.25]" />
+          <Quote className="w-24 h-24 stroke-[1]" />
         </motion.div>
 
         {/* Content quote block */}
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -40px 0px" }}
-          transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
-          className="space-y-8 will-change-transform"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+          className="space-y-6 will-change-transform"
         >
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
+          <span className="label-overline">
             Philosophy
           </span>
           
-          <h2 className="text-xl sm:text-2xl md:text-4xl font-medium font-heading italic leading-relaxed text-slate-100 max-w-3xl mx-auto px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light font-heading italic leading-relaxed text-[#071120] max-w-3xl mx-auto px-4">
             "Lasting success is built through strong partnerships, disciplined execution, and a clear vision for the future."
           </h2>
 
-          <div className="h-[1.5px] w-12 bg-accent-gold mx-auto mt-8" />
+          <div className="h-px w-10 bg-[#C9A14A] mx-auto mt-8" />
 
           <div className="space-y-1">
-            <p className="text-xs font-bold tracking-[0.2em] text-slate-100 font-heading uppercase">
+            <p className="text-[10px] font-bold tracking-[0.25em] text-[#071120] font-sans uppercase">
               VANTEX GROUP
             </p>
-            <p className="text-[9px] uppercase tracking-[0.25em] text-slate-500 font-semibold">
+            <p className="text-[9px] uppercase tracking-[0.2em] text-[#1E293B]/50 font-semibold">
               Corporate Governance & Growth Creed
             </p>
           </div>

@@ -1,6 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Search, Map, Network, Settings, TrendingUp } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Search, Map, Network, Settings, TrendingUp, Plus, Minus } from "lucide-react";
 
 const steps = [
   {
@@ -36,56 +36,99 @@ const steps = [
 ];
 
 export default function GrowthProcess() {
+  const [activeStep, setActiveStep] = useState(0);
+
   return (
-    <section id="process" className="py-32 bg-white overflow-hidden relative select-none">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <section
+      id="process"
+      className="py-16 md:py-24 bg-[#F5F2EB] text-[#071120] relative overflow-hidden"
+    >
+      {/* Subtle noise overlay */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.015]" style={{
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+      }} />
+
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* Header */}
-        <div className="max-w-3xl mb-24 text-left">
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
-            Methodology
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black font-heading text-primary-navy tracking-tight leading-[1.1] mt-3">
-            BUSINESS GROWTH PROCESS
-          </h2>
-          <div className="h-[2px] w-16 bg-accent-gold rounded-full mt-4" />
-          <p className="text-sm md:text-base text-slate-600 mt-6 max-w-xl font-normal leading-relaxed">
-            We follow a structured 5-step growth process, turning strategic vision into tangible value.
-          </p>
+        {/* Section Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 md:mb-20 items-end">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-4"
+          >
+            <span className="label-overline">Methodology</span>
+            <h2 className="heading-editorial">
+              Business Growth Process
+            </h2>
+            <div className="w-12 h-px bg-[#C9A14A]" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="lg:col-span-5"
+          >
+            <p className="text-[#1E293B]/70 text-sm font-light leading-relaxed">
+              We follow a structured 5-step growth process, turning strategic vision into tangible value.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Desktop Timeline */}
-        <div className="relative hidden lg:block">
-          {/* Horizontal connecting line */}
-          <div className="absolute top-[35px] left-[10%] right-[10%] h-[1.5px] bg-accent-gold/25 -z-10" />
-          
-          <div className="grid grid-cols-5 gap-6">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "0px 0px -40px 0px" }}
-                  transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.03 }}
-                  className="flex flex-col items-center text-center px-4 group will-change-transform"
-                >
-                  {/* Step bubble */}
-                  <div className="w-[70px] h-[70px] rounded-full bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm lg:group-hover:border-accent-gold transition-all duration-300 relative">
-                    <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center text-primary-navy lg:group-hover:bg-[#071120] lg:group-hover:text-white transition-colors duration-300">
-                      <Icon className="w-5 h-5 stroke-[1.5]" />
-                    </div>
-                    {/* Small number badge */}
-                    <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-accent-gold text-primary-navy font-bold text-[10px] flex items-center justify-center shadow-sm">
-                      {step.phase}
-                    </div>
-                  </div>
-
-                  <h3 className="text-base font-bold text-primary-navy mb-2 tracking-tight font-heading">
+        {/* Desktop timeline & content layout */}
+        <div className="hidden lg:grid lg:grid-cols-12 gap-16 items-start pt-6">
+          {/* Left Side: Accordion Selector */}
+          <div className="lg:col-span-5 space-y-3">
+            {steps.map((step, idx) => (
+              <div
+                key={idx}
+                className={`py-4 px-6 cursor-pointer border-l-2 transition-all duration-300 ${
+                  activeStep === idx
+                    ? "border-[#C9A14A] bg-[#FAF9F6]/80"
+                    : "border-transparent hover:border-[#071120]/30 hover:bg-[#FAF9F6]/20"
+                }`}
+                onClick={() => setActiveStep(idx)}
+              >
+                <div className="flex items-center gap-4">
+                  <span className={`text-xs font-bold font-sans ${activeStep === idx ? "text-[#C9A14A]" : "text-[#071120]/40"}`}>
+                    {step.phase}
+                  </span>
+                  <h3 className={`text-base tracking-wider uppercase font-semibold ${activeStep === idx ? "text-[#071120]" : "text-[#071120]/60"}`}>
                     {step.title}
                   </h3>
-                  <p className="text-[11px] text-slate-500 leading-relaxed font-normal max-w-[180px]">
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right Side: Detailed Card display */}
+          <div className="lg:col-span-7 bg-[#FAF9F6] p-12 border border-[#071120]/5 relative min-h-[300px] flex flex-col justify-center">
+            {steps.map((step, idx) => {
+              const Icon = step.icon;
+              if (activeStep !== idx) return null;
+
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  className="space-y-6"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 bg-[#C9A14A]/10 text-[#C9A14A] flex items-center justify-center">
+                      <Icon className="w-5 h-5 stroke-[1.5]" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#C9A14A] tracking-wider uppercase">Phase {step.phase}</span>
+                      <h4 className="heading-sub font-normal text-2xl">{step.title}</h4>
+                    </div>
+                  </div>
+                  <p className="text-[#1E293B]/70 leading-relaxed font-light text-[15px]">
                     {step.description}
                   </p>
                 </motion.div>
@@ -94,36 +137,51 @@ export default function GrowthProcess() {
           </div>
         </div>
 
-        {/* Mobile & Tablet Vertical Timeline */}
-        <div className="lg:hidden relative space-y-12 pl-8 before:content-[''] before:absolute before:left-3 before:top-4 before:bottom-4 before:w-[1.5px] before:bg-slate-200">
-          {steps.map((step, index) => {
+        {/* Mobile & Tablet Vertical Accordion Timeline */}
+        <div className="lg:hidden divide-y divide-[#071120]/10 border-t border-b border-[#071120]/10">
+          {steps.map((step, idx) => {
             const Icon = step.icon;
+            const isOpen = activeStep === idx;
+
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -8 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "0px 0px -30px 0px" }}
-                transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.03 }}
-                className="relative group will-change-transform"
-              >
-                {/* Step bubble */}
-                <div className="absolute -left-[43px] top-0 w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm lg:group-hover:border-accent-gold transition-colors">
-                  <Icon className="w-4 h-4 text-primary-navy lg:group-hover:text-accent-gold transition-colors stroke-[1.5]" />
+              <div key={idx} className="py-5">
+                <div
+                  className="flex items-center justify-between cursor-pointer"
+                  onClick={() => setActiveStep(isOpen ? -1 : idx)}
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="text-xs font-bold text-[#C9A14A]">{step.phase}</span>
+                    <h3 className="text-base tracking-wider uppercase font-semibold text-[#071120]">
+                      {step.title}
+                    </h3>
+                  </div>
+                  <div>
+                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                  </div>
                 </div>
-                
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-[9px] font-bold text-accent-gold uppercase tracking-widest bg-accent-gold/10 px-2 py-0.5 rounded">
-                    Phase {step.phase}
-                  </span>
-                  <h3 className="text-base font-bold text-primary-navy tracking-tight font-heading">
-                    {step.title}
-                  </h3>
-                </div>
-                <p className="text-xs text-slate-500 leading-relaxed font-normal max-w-lg">
-                  {step.description}
-                </p>
-              </motion.div>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 pl-8 space-y-4">
+                        <div className="flex items-center gap-3 text-[#C9A14A]">
+                          <Icon className="w-4 h-4 stroke-[1.5]" />
+                          <span className="text-[10px] font-bold uppercase tracking-wider">Phase {step.phase} Details</span>
+                        </div>
+                        <p className="text-xs text-[#1E293B]/70 leading-relaxed font-light">
+                          {step.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             );
           })}
         </div>

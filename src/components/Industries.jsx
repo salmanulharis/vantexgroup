@@ -49,51 +49,98 @@ const industriesList = [
 ];
 
 export default function Industries() {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const chipVariants = {
+    hidden: { opacity: 0, scale: 0.96, y: 10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
-    <section id="industries" className="py-32 bg-[#FAF9F6] select-none">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section
+      id="industries"
+      className="py-16 md:py-24 bg-[#FAF9F6] text-[#071120] relative overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
-            Sector Expertise
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black font-heading text-primary-navy tracking-tight leading-[1.1] mt-3">
-            INDUSTRIES WE SUPPORT
-          </h2>
-          <div className="h-[2px] w-16 bg-accent-gold mx-auto mt-4" />
-          <p className="text-sm md:text-base text-slate-600 mt-6 max-w-xl mx-auto leading-relaxed font-normal">
-            We are sector-agnostic. Our advisors leverage deep operational experience to apply strategic value across a wide spectrum of industries.
-          </p>
+        {/* Section Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 md:mb-16 items-end">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-4"
+          >
+            <span className="label-overline">Sector Expertise</span>
+            <h2 className="heading-editorial">
+              Industries We Support
+            </h2>
+            <div className="w-12 h-px bg-[#C9A14A]" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="lg:col-span-5"
+          >
+            <p className="text-[#1E293B]/70 text-sm font-light leading-relaxed">
+              We are sector-agnostic. Our advisors leverage deep operational experience to apply strategic value across a wide spectrum of industries.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Industry Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+        {/* Typographic Chips Scatter / Flow layout (No cards) */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+          className="flex flex-wrap gap-3 md:gap-4 justify-start items-center"
+        >
           {industriesList.map((ind, index) => {
             const Icon = ind.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px -40px 0px" }}
-                transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.03 }}
-                className="p-8 rounded-2xl bg-white border border-slate-200/50 lg:hover:border-accent-gold/30 lg:hover:shadow-[0_8px_20px_-10px_rgba(7,17,32,0.03)] lg:hover:-translate-y-[3px] transition-all duration-300 text-center flex flex-col items-center group min-h-60 justify-between will-change-transform"
+                variants={chipVariants}
+                className="industry-chip group border border-[#071120]/10 hover:border-[#071120] bg-transparent hover:bg-[#071120] transition-all duration-300 py-3.5 px-6 flex items-center gap-3 cursor-default"
               >
-                <div className="w-12 h-12 rounded-full bg-[#071120] text-white flex items-center justify-center mb-6 lg:group-hover:bg-accent-gold lg:group-hover:text-primary-navy transition-all duration-300">
-                  <Icon className="w-5 h-5 stroke-[1.5]" />
+                <div className="w-4 h-4 text-[#C9A14A] flex items-center justify-center">
+                  <Icon className="w-full h-full stroke-[1.5]" />
                 </div>
-                <div>
-                  <h3 className="text-sm font-bold text-primary-navy mb-2 tracking-tight font-heading">
+                <div className="text-left">
+                  <span className="block text-xs font-bold uppercase tracking-wider text-[#071120] group-hover:text-white transition-colors">
                     {ind.name}
-                  </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed font-normal">
+                  </span>
+                  <span className="block text-[10px] text-[#1E293B]/50 group-hover:text-[#FAF9F6]/60 transition-colors leading-none mt-1">
                     {ind.desc}
-                  </p>
+                  </span>
                 </div>
               </motion.div>
             );
           })}
+        </motion.div>
+
+        {/* Subtle footer quote in block */}
+        <div className="mt-10 md:mt-16 w-full h-px bg-[#071120]/5" />
+        <div className="mt-6 flex justify-between items-center text-[10px] uppercase tracking-widest text-[#071120]/30 font-medium">
+          <span>Strategy transfers</span>
+          <span>Domain expertise amplifies</span>
         </div>
 
       </div>

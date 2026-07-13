@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   Brain,
-  Link,
+  Link2,
   Milestone,
   TrendingUp,
   Award,
@@ -18,7 +18,7 @@ const advantages = [
     description: "We analyze market signals and business models to chart paths of high-probability growth.",
   },
   {
-    icon: Link,
+    icon: Link2,
     title: "Long-Term Partnerships",
     description: "We co-create sustainable value, staying aligned with our partners through every phase.",
   },
@@ -56,43 +56,48 @@ const advantages = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="py-32 bg-white border-b border-slate-100 relative select-none">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section
+      id="why-choose-us"
+      className="py-16 md:py-24 bg-[#F5F2EB] text-[#071120] relative overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* Header */}
-        <div className="max-w-3xl mb-24 text-left">
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
-            Our Edge
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black font-heading text-primary-navy tracking-tight leading-[1.1] mt-3">
-            WHY PARTNER WITH VANTEX
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12 md:mb-16 text-left">
+          <span className="label-overline mb-4">Our Edge</span>
+          <h2 className="heading-editorial">
+            Why Partner with Vantex
           </h2>
-          <div className="h-[2px] w-16 bg-accent-gold rounded-full mt-4" />
+          <div className="w-12 h-px bg-[#C9A14A] mt-5" />
         </div>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 overflow-hidden rounded-2xl border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+        {/* Typographic Asymmetric Grid (Using thin hairlines instead of card borders) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
           {advantages.map((adv, index) => {
             const Icon = adv.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "0px 0px -40px 0px" }}
-                transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94], delay: index * 0.03 }}
-                className="p-8 bg-white lg:hover:bg-[#FAF9F6]/50 transition-all duration-300 group flex flex-col justify-between min-h-64 will-change-transform"
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.05 }}
+                className="group space-y-4 text-left flex flex-col justify-between"
               >
-                <div>
-                  <div className="w-9 h-9 rounded-lg bg-primary-navy/5 text-primary-navy flex items-center justify-center mb-6 lg:group-hover:bg-accent-gold lg:group-hover:text-primary-navy transition-colors duration-300">
+                <div className="space-y-4">
+                  {/* Styled minimalist icon container */}
+                  <div className="w-7 h-7 bg-[#071120]/5 text-[#071120]/70 flex items-center justify-center group-hover:bg-[#C9A14A] group-hover:text-[#FAF9F6] transition-colors duration-300">
                     <Icon className="w-4 h-4 stroke-[1.5]" />
                   </div>
-                  <h3 className="text-sm font-bold text-primary-navy tracking-tight mb-2 font-heading">
-                    {adv.title}
-                  </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed font-normal">
-                    {adv.description}
-                  </p>
+                  
+                  <div className="space-y-2">
+                    <h3 className="text-[15px] font-bold uppercase tracking-wider text-[#071120]">
+                      {adv.title}
+                    </h3>
+                    <p className="text-[12.5px] text-[#1E293B]/70 leading-relaxed font-light">
+                      {adv.description}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             );

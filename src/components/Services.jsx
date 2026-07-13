@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   LineChart,
   Briefcase,
@@ -11,6 +11,7 @@ import {
   Network,
   GraduationCap,
   FolderKanban,
+  ArrowRight,
 } from "lucide-react";
 
 const servicesList = [
@@ -67,83 +68,110 @@ const servicesList = [
 ];
 
 export default function Services() {
-  const containerVariants = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.03,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 8 },
-    show: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }
-    },
-  };
+  const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section id="services" className="py-32 bg-[#071120] text-white relative select-none">
-      {/* Background accents */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-[#071120] to-black pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary-navy/20 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <section
+      id="services"
+      className="py-16 md:py-24 bg-[#FAF9F6] text-[#071120] relative overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-24 text-left">
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
-            Our Offerings
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black font-heading mt-3 tracking-tight">
-            CORE SERVICES
-          </h2>
-          <div className="h-[2px] w-16 bg-accent-gold rounded-full mt-4" />
-          <p className="text-sm md:text-base text-slate-300 font-normal leading-relaxed mt-6 max-w-xl">
-            We deliver actionable strategies and hands-on execution frameworks designed to accelerate institutional growth and unlock multi-dimensional enterprise value.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 md:mb-20 items-end">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-4"
+          >
+            <span className="label-overline">Our Offerings</span>
+            <h2 className="heading-editorial">
+              Core Services
+            </h2>
+            <div className="w-12 h-px bg-[#C9A14A]" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="lg:col-span-5"
+          >
+            <p className="text-[#1E293B]/70 text-sm font-light leading-relaxed">
+              We deliver actionable strategies and hands-on execution frameworks designed to accelerate institutional growth and unlock multi-dimensional enterprise value.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "0px 0px -40px 0px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+        {/* Services List Layout (Numbered rows with accordion descriptions for desktop & mobile) */}
+        <div className="border-t border-[#071120]/10 divide-y divide-[#071120]/10">
           {servicesList.map((service, index) => {
             const Icon = service.icon;
+            const isOpen = activeIndex === index;
+            const numStr = (index + 1).toString().padStart(2, "0");
+
             return (
-              <motion.div
+              <div
                 key={index}
-                variants={cardVariants}
-                className="relative group p-8 rounded-2xl bg-white/[0.01] border border-white/5 lg:hover:border-accent-gold/25 lg:hover:bg-white/[0.02] transition-all duration-300 flex flex-col justify-between min-h-64 will-change-transform"
+                className="group py-6 md:py-8 cursor-pointer select-none transition-all"
+                onClick={() => setActiveIndex(isOpen ? null : index)}
               >
-                <div>
-                  {/* Icon */}
-                  <div className="w-10 h-10 rounded-xl bg-accent-gold/10 text-accent-gold flex items-center justify-center mb-6 lg:group-hover:bg-accent-gold lg:group-hover:text-[#071120] transition-colors duration-300">
-                    <Icon className="w-5 h-5 stroke-[1.5]" />
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  
+                  {/* Left row summary */}
+                  <div className="flex items-center gap-6 md:gap-10">
+                    <span className="text-[13px] font-bold text-[#C9A14A] font-sans">
+                      {numStr}
+                    </span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 text-[#071120]/60 group-hover:text-[#C9A14A] transition-colors">
+                        <Icon className="w-full h-full stroke-[1.5]" />
+                      </div>
+                      <h3 className="heading-sub font-normal text-lg md:text-xl group-hover:translate-x-1 transition-transform duration-300">
+                        {service.title}
+                      </h3>
+                    </div>
                   </div>
-                  {/* Title */}
-                  <h3 className="text-base font-bold text-white mb-2.5 tracking-tight font-heading">
-                    {service.title}
-                  </h3>
-                  {/* Description */}
-                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
-                    {service.description}
-                  </p>
+
+                  {/* Toggle Indicator */}
+                  <div className="flex items-center gap-2 self-end md:self-auto text-xs font-semibold uppercase tracking-wider text-[#071120]/45 group-hover:text-[#C9A14A] transition-colors">
+                    <span className="hidden md:inline">Details</span>
+                    <motion.div
+                      animate={{ rotate: isOpen ? 90 : 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <ArrowRight className="w-4 h-4 stroke-[1.5]" />
+                    </motion.div>
+                  </div>
+
                 </div>
-                
-                {/* Visual Accent Corner indicator */}
-                <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-transparent lg:group-hover:bg-accent-gold transition-colors duration-300" />
-              </motion.div>
+
+                {/* Smooth Animated Accordion Content */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-12 md:pl-16 pr-4 pt-4 pb-2 max-w-2xl">
+                        <p className="text-[#1E293B]/70 text-[13.5px] leading-relaxed font-light">
+                          {service.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );
