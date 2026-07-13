@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import Logo from "./Logo";
 
 const LinkedInIcon = ({ className = "w-4 h-4" }) => (
@@ -40,26 +40,26 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 py-16">
+    <footer className="bg-[#071120] text-slate-400 border-t border-slate-900/60 py-20 select-none">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-6">
             <a href="#home" onClick={(e) => handleScrollTo(e, "home")} className="flex items-center gap-3 group">
-              <div className="w-10 h-10 flex items-center justify-center">
+              <div className="w-9 h-9 flex items-center justify-center">
                 <Logo className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-wider text-white font-heading leading-none">
+                <span className="text-lg font-bold tracking-wider text-white font-heading leading-none">
                   VANTEX
                 </span>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-gold mt-1 leading-none">
+                <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent-gold mt-1 leading-none">
                   Group
                 </span>
               </div>
             </a>
-            <p className="text-sm leading-relaxed max-w-sm">
+            <p className="text-xs leading-relaxed max-w-sm font-normal">
               An enterprise-grade growth advisory group co-creating sustainable value and connecting capital, strategy, and execution.
             </p>
             <div className="flex gap-4">
@@ -70,7 +70,7 @@ export default function Footer() {
                 className="w-8 h-8 rounded-full bg-white/5 text-slate-400 flex items-center justify-center hover:bg-accent-gold hover:text-primary-navy transition-colors duration-300"
                 aria-label="LinkedIn Profile"
               >
-                <LinkedInIcon className="w-4 h-4" />
+                <LinkedInIcon className="w-3.5 h-3.5" />
               </a>
               <a
                 href="https://twitter.com"
@@ -79,17 +79,17 @@ export default function Footer() {
                 className="w-8 h-8 rounded-full bg-white/5 text-slate-400 flex items-center justify-center hover:bg-accent-gold hover:text-primary-navy transition-colors duration-300"
                 aria-label="Twitter Profile"
               >
-                <TwitterIcon className="w-4 h-4" />
+                <TwitterIcon className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-sm font-bold text-white tracking-widest uppercase">
+          <div className="lg:col-span-2 space-y-5">
+            <h4 className="text-[10px] font-bold text-white tracking-[0.25em] uppercase">
               Navigation
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-3 text-xs font-normal">
               <li>
                 <a href="#home" onClick={(e) => handleScrollTo(e, "home")} className="hover:text-accent-gold transition-colors">
                   Home
@@ -114,11 +114,11 @@ export default function Footer() {
           </div>
 
           {/* Services Column */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-sm font-bold text-white tracking-widest uppercase">
+          <div className="lg:col-span-3 space-y-5">
+            <h4 className="text-[10px] font-bold text-white tracking-[0.25em] uppercase">
               Core Practices
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-3 text-xs font-normal">
               <li>
                 <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-accent-gold transition-colors">
                   Strategic Advisory
@@ -143,21 +143,27 @@ export default function Footer() {
           </div>
 
           {/* Address Column */}
-          <div className="lg:col-span-3 space-y-4 text-sm leading-relaxed">
-            <h4 className="text-sm font-bold text-white tracking-widest uppercase">
+          <div className="lg:col-span-3 space-y-5 text-xs leading-relaxed font-normal">
+            <h4 className="text-[10px] font-bold text-white tracking-[0.25em] uppercase">
               Contact
             </h4>
-            <ul className="space-y-3">
-              <li className="flex gap-2">
-                <MapPin className="w-4 h-4 text-accent-gold flex-shrink-0 mt-1" />
+            <ul className="space-y-3.5">
+              <li className="flex gap-2.5">
+                <MapPin className="w-3.5 h-3.5 text-accent-gold flex-shrink-0 mt-0.5" />
                 <span>
                   Ernahikal Arcade, Near Kottakkal Municipality, Kottakkal, India
                 </span>
               </li>
-              <li className="flex gap-2">
-                <Mail className="w-4 h-4 text-accent-gold flex-shrink-0 mt-0.5" />
+              <li className="flex gap-2.5">
+                <Mail className="w-3.5 h-3.5 text-accent-gold flex-shrink-0 mt-0.5" />
                 <a href="mailto:info@vantegroup.org" className="hover:text-accent-gold transition-colors">
                   info@vantegroup.org
+                </a>
+              </li>
+              <li className="flex gap-2.5">
+                <Phone className="w-3.5 h-3.5 text-accent-gold flex-shrink-0 mt-0.5" />
+                <a href="tel:+919946430289" className="hover:text-accent-gold transition-colors">
+                  +91 99464 30289
                 </a>
               </li>
             </ul>
@@ -166,7 +172,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row items-center justify-between text-xs gap-4">
+        <div className="border-t border-slate-900/60 pt-8 flex flex-col md:flex-row items-center justify-between text-[10px] gap-4 font-normal">
           <p>
             © {new Date().getFullYear()} Vantex Group (Vantegroup.org). All rights reserved.
           </p>

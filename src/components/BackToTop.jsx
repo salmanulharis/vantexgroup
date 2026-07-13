@@ -29,14 +29,14 @@ export default function BackToTop() {
     <AnimatePresence>
       {isVisible && (
         <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
+          exit={{ opacity: 0, scale: 0.85 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-primary-navy text-white hover:bg-accent-gold hover:text-primary-navy transition-colors duration-300 shadow-lg border border-slate-800 cursor-pointer"
+          className="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-white/90 backdrop-blur-md text-primary-navy hover:text-[#071120] hover:border-accent-gold border border-slate-200/60 transition-all duration-300 shadow-[0_4px_15px_-5px_rgba(7,17,32,0.1)] hover:shadow-[0_4px_20px_-5px_rgba(201,161,74,0.3)] cursor-pointer group flex items-center justify-center"
           aria-label="Back to top"
         >
-          <ArrowUp className="w-5 h-5" />
+          <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform stroke-[2]" />
         </motion.button>
       )}
     </AnimatePresence>

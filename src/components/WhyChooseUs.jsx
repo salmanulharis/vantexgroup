@@ -65,41 +65,41 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section id="why-choose-us" className="py-28 bg-white border-b border-slate-100">
+    <section id="why-choose-us" className="py-32 bg-white border-b border-slate-100 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header */}
-        <div className="max-w-3xl mb-20 text-left">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-accent-gold">
+        <div className="max-w-3xl mb-24 text-left">
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
             Our Edge
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary-navy tracking-tight leading-tight mt-3">
+          <h2 className="text-3xl md:text-5xl font-black font-heading text-primary-navy tracking-tight leading-[1.1] mt-3">
             WHY PARTNER WITH VANTEX
           </h2>
-          <div className="h-1 w-20 bg-accent-gold rounded-full mt-4" />
+          <div className="h-[2px] w-16 bg-accent-gold rounded-full mt-4" />
         </div>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Feature Grid (Rebuilt as a clean McKinsey-style corporate grid) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 overflow-hidden rounded-2xl border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
           {advantages.map((adv, index) => {
             const Icon = adv.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
+                initial={{ opacity: 0, y: isMobile ? 8 : 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-                transition={{ duration: isMobile ? 0.35 : 0.6, delay: isMobile ? index * 0.03 : index * 0.05 }}
-                className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-accent-gold/40 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col justify-between"
+                transition={{ duration: isMobile ? 0.35 : 0.5, delay: isMobile ? index * 0.03 : index * 0.05 }}
+                className="p-8 bg-white hover:bg-slate-50/50 transition-all duration-300 group flex flex-col justify-between min-h-64"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-lg bg-primary-navy/5 text-primary-navy flex items-center justify-center mb-5 group-hover:bg-accent-gold group-hover:text-primary-navy transition-colors duration-300">
-                    <Icon className="w-5 h-5" />
+                  <div className="w-9 h-9 rounded-lg bg-primary-navy/5 text-primary-navy flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-primary-navy transition-colors duration-300">
+                    <Icon className="w-4 h-4 stroke-[1.5]" />
                   </div>
-                  <h3 className="text-base font-bold text-primary-navy mb-2 tracking-wide">
+                  <h3 className="text-sm font-bold text-primary-navy tracking-tight mb-2 font-heading">
                     {adv.title}
                   </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">
+                  <p className="text-xs text-slate-500 leading-relaxed font-normal">
                     {adv.description}
                   </p>
                 </div>

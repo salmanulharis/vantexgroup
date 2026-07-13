@@ -13,33 +13,33 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <section id="about" className="py-28 bg-white overflow-hidden relative">
+    <section id="about" className="py-32 bg-white overflow-hidden relative">
       {/* Background visual element */}
       <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-slate-50 rounded-full blur-[100px] pointer-events-none opacity-60" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
           
           {/* Left Column: Who We Are */}
           <motion.div
-            initial={{ opacity: 0, y: isMobile ? 10 : 30 }}
+            initial={{ opacity: 0, y: isMobile ? 8 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-            transition={{ duration: isMobile ? 0.45 : 0.8 }}
+            transition={{ duration: isMobile ? 0.45 : 0.6 }}
             className="lg:col-span-6 space-y-8"
           >
             <div className="space-y-3">
-              <span className="text-sm font-bold uppercase tracking-[0.2em] text-accent-gold">
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
                 About Us
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary-navy tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-5xl font-black font-heading text-primary-navy tracking-tight leading-[1.1]">
                 WHO WE ARE
               </h2>
-              <div className="h-1 w-20 bg-accent-gold rounded-full" />
+              <div className="h-[2px] w-16 bg-accent-gold rounded-full" />
             </div>
 
-            <div className="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed font-normal">
-              <p className="text-slate-800 font-semibold">
+            <div className="space-y-6 text-slate-600 text-sm md:text-base leading-relaxed font-normal">
+              <p className="text-slate-900 font-semibold text-base md:text-lg">
                 We are a growth-focused advisory group dedicated to helping businesses identify opportunities, strengthen market presence, develop strategic partnerships, and create scalable systems for long-term success.
               </p>
               <p>
@@ -50,8 +50,8 @@ export default function AboutUs() {
               </p>
             </div>
             
-            {/* Value Checkmark List */}
-            <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Value Checkmark List (Minimal styling) */}
+            <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-100">
               {[
                 "Practical Execution",
                 "Business Intelligence",
@@ -59,35 +59,35 @@ export default function AboutUs() {
                 "Strategic Thinking",
               ].map((value, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-accent-gold/20 flex items-center justify-center text-accent-gold">
-                    <BookmarkCheck className="w-3.5 h-3.5" />
+                  <div className="flex-shrink-0 w-4 h-4 rounded-full bg-accent-gold/10 flex items-center justify-center text-accent-gold">
+                    <BookmarkCheck className="w-2.5 h-2.5" />
                   </div>
-                  <span className="text-sm font-semibold text-slate-800">{value}</span>
+                  <span className="text-xs font-bold tracking-wide text-primary-navy uppercase">{value}</span>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right Column: Mission and Vision Cards */}
+          {/* Right Column: Mission and Vision (Editorial Minimal Blocks) */}
           <div className="lg:col-span-6 flex flex-col justify-center gap-8">
+            
             {/* Vision Card */}
             <motion.div
-              initial={{ opacity: 0, x: isMobile ? 10 : 40 }}
+              initial={{ opacity: 0, x: isMobile ? 10 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-              transition={{ duration: isMobile ? 0.45 : 0.8 }}
-              className="p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-primary-navy text-white shadow-xl relative overflow-hidden group border border-slate-800"
+              transition={{ duration: isMobile ? 0.45 : 0.6 }}
+              className="p-8 rounded-2xl bg-white border-l-4 border-accent-gold shadow-[0_10px_25px_-12px_rgba(7,17,32,0.04)] relative overflow-hidden group border border-slate-100"
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500" />
               <div className="flex items-start gap-5">
-                <div className="p-3 rounded-xl bg-accent-gold/10 text-accent-gold mt-1">
-                  <Eye className="w-7 h-7" />
+                <div className="p-2.5 rounded-xl bg-accent-gold/5 text-accent-gold mt-1">
+                  <Eye className="w-5 h-5 stroke-[1.5]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold uppercase tracking-wider text-accent-gold mb-3 font-heading">
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-primary-navy mb-2.5 font-heading">
                     OUR VISION
                   </h3>
-                  <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+                  <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-normal">
                     To build a trusted business advisory and investment ecosystem that connects entrepreneurs, organizations, opportunities, and capital to create long-term value and sustainable growth.
                   </p>
                 </div>
@@ -96,27 +96,27 @@ export default function AboutUs() {
 
             {/* Mission Card */}
             <motion.div
-              initial={{ opacity: 0, x: isMobile ? 10 : 40 }}
+              initial={{ opacity: 0, x: isMobile ? 10 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-              transition={{ duration: isMobile ? 0.45 : 0.8, delay: isMobile ? 0.05 : 0.2 }}
-              className="p-8 rounded-2xl bg-white text-slate-800 shadow-lg border border-slate-100 hover:border-slate-200 transition-all duration-300 relative overflow-hidden group"
+              transition={{ duration: isMobile ? 0.45 : 0.6, delay: 0.1 }}
+              className="p-8 rounded-2xl bg-white border-l-4 border-primary-navy shadow-[0_10px_25px_-12px_rgba(7,17,32,0.04)] relative overflow-hidden group border border-slate-100"
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 rounded-bl-full pointer-events-none group-hover:scale-110 transition-transform duration-500" />
               <div className="flex items-start gap-5">
-                <div className="p-3 rounded-xl bg-primary-navy/5 text-primary-navy mt-1">
-                  <Target className="w-7 h-7" />
+                <div className="p-2.5 rounded-xl bg-primary-navy/5 text-primary-navy mt-1">
+                  <Target className="w-5 h-5 stroke-[1.5]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold uppercase tracking-wider text-primary-navy mb-3 font-heading">
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-primary-navy mb-2.5 font-heading">
                     OUR MISSION
                   </h3>
-                  <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                  <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-normal">
                     To empower businesses through strategic advisory, growth partnerships, business development, and future-focused expansion initiatives.
                   </p>
                 </div>
               </div>
             </motion.div>
+
           </div>
 
         </div>

@@ -36,38 +36,38 @@ export default function TrustedPartner() {
   ];
 
   return (
-    <section id="trusted-partner" className="py-24 bg-slate-50 border-b border-slate-100">
+    <section id="trusted-partner" className="py-32 bg-[#FAF9F6] border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
           
           {/* Left Column: Heading and Paragraphs */}
           <motion.div
-            initial={{ opacity: 0, x: isMobile ? -10 : -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: isMobile ? 8 : 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-            transition={{ duration: isMobile ? 0.45 : 0.8 }}
+            transition={{ duration: isMobile ? 0.45 : 0.6 }}
             className="lg:col-span-6 space-y-6"
           >
-            <div className="inline-block px-3 py-1 rounded-full bg-accent-gold/10 text-accent-gold text-xs font-semibold uppercase tracking-wider">
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
               Trusted Partner
-            </div>
+            </span>
             
-            <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary-navy tracking-tight leading-tight">
+            <h2 className="text-3xl md:text-5xl font-black font-heading text-primary-navy tracking-tight leading-[1.1]">
               A Trusted Partner for Long-Term Corporate Growth
             </h2>
             
-            <div className="h-1 w-20 bg-accent-gold rounded-full" />
+            <div className="h-[2px] w-16 bg-accent-gold rounded-full" />
             
-            <p className="text-lg text-slate-700 font-medium leading-relaxed">
+            <p className="text-base md:text-lg text-slate-800 font-semibold leading-relaxed">
               Our focus is not limited to a single industry. We work with businesses, entrepreneurs, healthcare organizations, and growth-oriented enterprises seeking structured expansion and strategic direction.
             </p>
             
-            <p className="text-base text-slate-600 leading-relaxed">
+            <p className="text-sm text-slate-600 leading-relaxed font-normal">
               From market development and business partnerships to future investment opportunities and venture growth, we help organizations navigate their next stage of evolution. We bridge gaps between potential and realization, ensuring that strategic partnerships are formed on solid foundations.
             </p>
           </motion.div>
 
-          {/* Right Column: Grid of Icon Cards */}
+          {/* Right Column: Grid of Icon Cards (Rebuilt as borderless elegant consulting cells) */}
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
@@ -77,18 +77,20 @@ export default function TrustedPartner() {
                   initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-                  transition={{ duration: isMobile ? 0.35 : 0.6, delay: isMobile ? index * 0.05 : index * 0.1 }}
-                  className="p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1"
+                  transition={{ duration: isMobile ? 0.35 : 0.5, delay: isMobile ? index * 0.05 : index * 0.1 }}
+                  className="p-8 rounded-2xl bg-white border border-slate-200/50 hover:border-accent-gold/45 hover:shadow-[0_12px_30px_-12px_rgba(7,17,32,0.06)] transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between h-56"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-5 group-hover:bg-accent-gold group-hover:text-primary-navy transition-colors duration-300">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-11 h-11 rounded-xl bg-[#071120] text-white flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-primary-navy transition-colors duration-300">
+                    <Icon className="w-5 h-5 stroke-[1.5]" />
                   </div>
-                  <h3 className="text-lg font-bold text-primary-navy mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <div>
+                    <h3 className="text-base font-bold text-primary-navy tracking-tight mb-2 font-heading">
+                      {feature.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 leading-relaxed font-normal">
+                      {feature.description}
+                    </p>
+                  </div>
                 </motion.div>
               );
             })}

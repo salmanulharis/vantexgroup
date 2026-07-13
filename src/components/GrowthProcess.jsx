@@ -46,55 +46,55 @@ export default function GrowthProcess() {
   }, []);
 
   return (
-    <section id="process" className="py-28 bg-white overflow-hidden relative">
+    <section id="process" className="py-32 bg-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header */}
         <div className="max-w-3xl mb-24 text-left">
-          <span className="text-sm font-bold uppercase tracking-[0.2em] text-accent-gold">
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
             Methodology
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary-navy tracking-tight leading-tight mt-3">
+          <h2 className="text-3xl md:text-5xl font-black font-heading text-primary-navy tracking-tight leading-[1.1] mt-3">
             BUSINESS GROWTH PROCESS
           </h2>
-          <div className="h-1 w-20 bg-accent-gold rounded-full mt-4" />
-          <p className="text-slate-600 mt-6 text-base max-w-xl">
+          <div className="h-[2px] w-16 bg-accent-gold rounded-full mt-4" />
+          <p className="text-sm md:text-base text-slate-600 mt-6 max-w-xl font-normal leading-relaxed">
             We follow a structured 5-step growth process, turning strategic vision into tangible value.
           </p>
         </div>
 
         {/* Desktop Timeline */}
         <div className="relative hidden lg:block">
-          {/* Horizontal Line */}
-          <div className="absolute top-[52px] left-[5%] right-[5%] h-0.5 bg-slate-100 -z-10" />
+          {/* Horizontal connecting line (Sleek gold line) */}
+          <div className="absolute top-[35px] left-[10%] right-[10%] h-[1.5px] bg-accent-gold/25 -z-10" />
           
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-5 gap-6">
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: isMobile ? 10 : 30 }}
+                  initial={{ opacity: 0, y: isMobile ? 10 : 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: isMobile ? "-20px" : "-100px" }}
-                  transition={{ duration: isMobile ? 0.35 : 0.6, delay: isMobile ? index * 0.05 : index * 0.15 }}
+                  transition={{ duration: isMobile ? 0.35 : 0.5, delay: isMobile ? index * 0.05 : index * 0.1 }}
                   className="flex flex-col items-center text-center px-4 group"
                 >
-                  {/* Step bubble */}
-                  <div className="w-[104px] h-[104px] rounded-full bg-white border-2 border-slate-100 flex items-center justify-center mb-6 shadow-sm group-hover:border-accent-gold transition-all duration-300 relative">
-                    <div className="w-[88px] h-[88px] rounded-full bg-slate-50 flex items-center justify-center text-primary-navy group-hover:bg-primary-navy group-hover:text-white transition-colors duration-300">
-                      <Icon className="w-8 h-8" />
+                  {/* Rebuilt Step bubble (Minimalist consulting ring) */}
+                  <div className="w-[70px] h-[70px] rounded-full bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:border-accent-gold transition-all duration-300 relative">
+                    <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center text-primary-navy group-hover:bg-[#071120] group-hover:text-white transition-colors duration-300">
+                      <Icon className="w-5 h-5 stroke-[1.5]" />
                     </div>
                     {/* Small number badge */}
-                    <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-accent-gold text-primary-navy font-bold text-xs flex items-center justify-center shadow-md">
+                    <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-accent-gold text-primary-navy font-bold text-[10px] flex items-center justify-center shadow-sm">
                       {step.phase}
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-primary-navy mb-2 tracking-wide">
+                  <h3 className="text-base font-bold text-primary-navy mb-2 tracking-tight font-heading">
                     {step.title}
                   </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed font-normal max-w-[200px]">
+                  <p className="text-[11px] text-slate-500 leading-relaxed font-normal max-w-[180px]">
                     {step.description}
                   </p>
                 </motion.div>
@@ -104,32 +104,32 @@ export default function GrowthProcess() {
         </div>
 
         {/* Mobile & Tablet Vertical Timeline */}
-        <div className="lg:hidden relative space-y-12 pl-8 before:content-[''] before:absolute before:left-3 before:top-4 before:bottom-4 before:w-[2px] before:bg-slate-100">
+        <div className="lg:hidden relative space-y-12 pl-8 before:content-[''] before:absolute before:left-3 before:top-4 before:bottom-4 before:w-[1.5px] before:bg-slate-200">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: isMobile ? -10 : -20 }}
+                initial={{ opacity: 0, x: isMobile ? -8 : -15 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: isMobile ? "-20px" : "-50px" }}
-                transition={{ duration: isMobile ? 0.35 : 0.6, delay: isMobile ? index * 0.05 : index * 0.1 }}
+                transition={{ duration: isMobile ? 0.35 : 0.5, delay: isMobile ? index * 0.04 : index * 0.08 }}
                 className="relative group"
               >
                 {/* Step bubble */}
-                <div className="absolute -left-11 top-0 w-8 h-8 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center shadow-sm group-hover:border-accent-gold transition-colors">
-                  <Icon className="w-4 h-4 text-primary-navy group-hover:text-accent-gold transition-colors" />
+                <div className="absolute -left-[43px] top-0 w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm group-hover:border-accent-gold transition-colors">
+                  <Icon className="w-4 h-4 text-primary-navy group-hover:text-accent-gold transition-colors stroke-[1.5]" />
                 </div>
                 
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-xs font-bold text-accent-gold uppercase tracking-wider bg-accent-gold/10 px-2 py-0.5 rounded">
+                  <span className="text-[9px] font-bold text-accent-gold uppercase tracking-widest bg-accent-gold/10 px-2 py-0.5 rounded">
                     Phase {step.phase}
                   </span>
-                  <h3 className="text-lg font-bold text-primary-navy tracking-wide">
+                  <h3 className="text-base font-bold text-primary-navy tracking-tight font-heading">
                     {step.title}
                   </h3>
                 </div>
-                <p className="text-sm text-slate-500 leading-relaxed font-normal max-w-lg">
+                <p className="text-xs text-slate-500 leading-relaxed font-normal max-w-lg">
                   {step.description}
                 </p>
               </motion.div>

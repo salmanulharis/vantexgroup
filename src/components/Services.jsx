@@ -80,40 +80,38 @@ export default function Services() {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: isMobile ? 0.05 : 0.1,
+        staggerChildren: isMobile ? 0.04 : 0.07,
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: isMobile ? 10 : 30 },
+    hidden: { opacity: 0, y: isMobile ? 10 : 20 },
     show: { 
       opacity: 1, 
       y: 0, 
-      transition: isMobile
-        ? { type: "tween", ease: "easeOut", duration: 0.3 }
-        : { type: "spring", stiffness: 100, damping: 15 }
+      transition: { type: "tween", ease: "easeOut", duration: 0.4 }
     },
   };
 
   return (
-    <section id="services" className="py-28 bg-slate-950 text-white relative">
+    <section id="services" className="py-32 bg-[#071120] text-white relative">
       {/* Background accents */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-[#071120] to-black pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary-navy/20 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-20 text-left">
-          <span className="text-sm font-bold uppercase tracking-[0.25em] text-accent-gold">
+        <div className="max-w-3xl mb-24 text-left">
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-accent-gold block">
             Our Offerings
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mt-3 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-black font-heading mt-3 tracking-tight">
             CORE SERVICES
           </h2>
-          <div className="h-1.5 w-24 bg-accent-gold rounded-full mt-5 mb-6" />
-          <p className="text-lg text-slate-300 font-normal leading-relaxed">
+          <div className="h-[2px] w-16 bg-accent-gold rounded-full mt-4" />
+          <p className="text-sm md:text-base text-slate-300 font-normal leading-relaxed mt-6 max-w-xl">
             We deliver actionable strategies and hands-on execution frameworks designed to accelerate institutional growth and unlock multi-dimensional enterprise value.
           </p>
         </div>
@@ -124,7 +122,7 @@ export default function Services() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: isMobile ? "-15px" : "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {servicesList.map((service, index) => {
             const Icon = service.icon;
@@ -132,25 +130,25 @@ export default function Services() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="relative group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-accent-gold/40 hover:bg-white/[0.08] transition-all duration-300 hover:translate-y-[-4px] flex flex-col justify-between"
+                className="relative group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-accent-gold/30 hover:bg-white/[0.04] transition-all duration-300 hover:translate-y-[-2px] flex flex-col justify-between min-h-64"
               >
                 <div>
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-accent-gold/10 text-accent-gold flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-primary-navy transition-colors duration-300">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-xl bg-accent-gold/10 text-accent-gold flex items-center justify-center mb-6 group-hover:bg-accent-gold group-hover:text-[#071120] transition-colors duration-300">
+                    <Icon className="w-5 h-5 stroke-[1.5]" />
                   </div>
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-wide">
+                  <h3 className="text-base font-bold text-white mb-2.5 tracking-tight font-heading">
                     {service.title}
                   </h3>
                   {/* Description */}
-                  <p className="text-sm text-slate-400 leading-relaxed font-normal">
+                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
                     {service.description}
                   </p>
                 </div>
                 
                 {/* Visual Accent Corner indicator */}
-                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-transparent group-hover:bg-accent-gold transition-colors duration-300" />
+                <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-transparent group-hover:bg-accent-gold transition-colors duration-300" />
               </motion.div>
             );
           })}
