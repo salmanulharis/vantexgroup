@@ -66,6 +66,7 @@ export default function Footer() {
             <p className="text-xs leading-relaxed max-w-xs font-light">
               An enterprise-grade growth advisory group co-creating sustainable value and connecting capital, strategy, and execution.
             </p>
+            {/* Social media links hidden for now
             <div className="flex gap-4">
               <a
                 href="https://linkedin.com"
@@ -86,6 +87,7 @@ export default function Footer() {
                 <TwitterIcon className="w-3.5 h-3.5" />
               </a>
             </div>
+            */}
           </div>
 
           {/* Quick Links */}
