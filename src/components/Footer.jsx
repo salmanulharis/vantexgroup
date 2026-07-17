@@ -162,8 +162,8 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <Mail className="w-3.5 h-3.5 text-[#D4B066] flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@vantegroup.org" className="hover:text-[#D4B066] transition-colors">
-                  info@vantegroup.org
+                <a href="mailto:info@vantexgroup.org" className="hover:text-[#D4B066] transition-colors">
+                  info@vantexgroup.org
                 </a>
               </li>
               <li className="flex gap-3">

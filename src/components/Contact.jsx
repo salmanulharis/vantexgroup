@@ -85,8 +85,8 @@ export default function Contact() {
                   <h4 className="text-[10px] font-bold text-[#071120]/55 uppercase tracking-widest mb-1.5 font-sans">
                     Electronic Mail
                   </h4>
-                  <a href="mailto:info@vantegroup.org" className="text-xs text-[#071120] font-medium link-underline">
-                    info@vantegroup.org
+                  <a href="mailto:info@vantexgroup.org" className="text-xs text-[#071120] font-medium link-underline">
+                    info@vantexgroup.org
                   </a>
                 </div>
               </div>
