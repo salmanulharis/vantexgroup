@@ -98,7 +98,7 @@ export default function Industries() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="lg:col-span-5"
           >
-            <p className="text-[#1E293B]/70 text-sm font-light leading-relaxed">
+            <p className="text-[#1E293B]/80 text-sm font-light leading-relaxed">
               We are sector-agnostic. Our advisors leverage deep operational experience to apply strategic value across a wide spectrum of industries.
             </p>
           </motion.div>
@@ -120,14 +120,14 @@ export default function Industries() {
                 variants={chipVariants}
                 className="industry-chip group border border-[#071120]/10 hover:border-[#071120] bg-transparent hover:bg-[#071120] transition-all duration-300 py-3.5 px-6 flex items-center gap-3 cursor-default"
               >
-                <div className="w-4 h-4 text-[#C9A14A] flex items-center justify-center">
+                <div className="w-4 h-4 text-[#9A7428] flex items-center justify-center">
                   <Icon className="w-full h-full stroke-[1.5]" />
                 </div>
                 <div className="text-left">
                   <span className="block text-xs font-bold uppercase tracking-wider text-[#071120] group-hover:text-white transition-colors">
                     {ind.name}
                   </span>
-                  <span className="block text-[10px] text-[#1E293B]/50 group-hover:text-[#FAF9F6]/60 transition-colors leading-none mt-1">
+                  <span className="block text-[10px] text-[#1E293B]/65 group-hover:text-[#FAF9F6]/75 transition-colors leading-none mt-1">
                     {ind.desc}
                   </span>
                 </div>

@@ -51,7 +51,7 @@ export default function Contact() {
                 Contact Us
               </h2>
               <div className="w-12 h-px bg-[#C9A14A]" />
-              <p className="text-[#1E293B]/70 text-sm font-light leading-relaxed">
+              <p className="text-[#1E293B]/80 text-sm font-light leading-relaxed">
                 Connect with our advisory board to discuss investment strategies, regional expansion plans, or corporate advisory requirements.
               </p>
             </div>
@@ -61,11 +61,11 @@ export default function Contact() {
               
               {/* Address detail */}
               <div className="flex gap-4 items-start">
-                <div className="w-5 h-5 text-[#C9A14A] flex-shrink-0 mt-0.5">
+                <div className="w-5 h-5 text-[#9A7428] flex-shrink-0 mt-0.5">
                   <MapPin className="w-full h-full stroke-[1.5]" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold text-[#071120]/40 uppercase tracking-widest mb-1.5 font-sans">
+                  <h4 className="text-[10px] font-bold text-[#071120]/55 uppercase tracking-widest mb-1.5 font-sans">
                     Corporate Office
                   </h4>
                   <p className="text-xs text-[#1E293B] leading-relaxed font-light">
@@ -78,11 +78,11 @@ export default function Contact() {
 
               {/* Email detail */}
               <div className="flex gap-4 items-start">
-                <div className="w-5 h-5 text-[#C9A14A] flex-shrink-0 mt-0.5">
+                <div className="w-5 h-5 text-[#9A7428] flex-shrink-0 mt-0.5">
                   <Mail className="w-full h-full stroke-[1.5]" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold text-[#071120]/40 uppercase tracking-widest mb-1.5 font-sans">
+                  <h4 className="text-[10px] font-bold text-[#071120]/55 uppercase tracking-widest mb-1.5 font-sans">
                     Electronic Mail
                   </h4>
                   <a href="mailto:info@vantegroup.org" className="text-xs text-[#071120] font-medium link-underline">
@@ -93,11 +93,11 @@ export default function Contact() {
 
               {/* Phone detail */}
               <div className="flex gap-4 items-start">
-                <div className="w-5 h-5 text-[#C9A14A] flex-shrink-0 mt-0.5">
+                <div className="w-5 h-5 text-[#9A7428] flex-shrink-0 mt-0.5">
                   <Phone className="w-full h-full stroke-[1.5]" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold text-[#071120]/40 uppercase tracking-widest mb-1.5 font-sans">
+                  <h4 className="text-[10px] font-bold text-[#071120]/55 uppercase tracking-widest mb-1.5 font-sans">
                     Phone Number
                   </h4>
                   <a href="tel:+919946430289" className="text-xs text-[#071120] font-medium link-underline">
@@ -108,11 +108,11 @@ export default function Contact() {
 
               {/* Hours detail */}
               <div className="flex gap-4 items-start">
-                <div className="w-5 h-5 text-[#C9A14A] flex-shrink-0 mt-0.5">
+                <div className="w-5 h-5 text-[#9A7428] flex-shrink-0 mt-0.5">
                   <Clock className="w-full h-full stroke-[1.5]" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold text-[#071120]/40 uppercase tracking-widest mb-1.5 font-sans">
+                  <h4 className="text-[10px] font-bold text-[#071120]/55 uppercase tracking-widest mb-1.5 font-sans">
                     Operating Hours
                   </h4>
                   <p className="text-xs text-[#1E293B] font-light">
@@ -128,12 +128,12 @@ export default function Contact() {
               {/* Subtle line background */}
               <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:20px_20px]" />
               <div className="relative z-10 space-y-3">
-                <MapPin className="w-5 h-5 text-[#C9A14A] mx-auto stroke-[1.5]" />
+                <MapPin className="w-5 h-5 text-[#D4B066] mx-auto stroke-[1.5]" />
                 <div>
                   <h5 className="text-[10px] font-bold text-[#FAF9F6] uppercase tracking-widest mb-0.5">
                     Ernahikal Arcade, Kottakkal
                   </h5>
-                  <p className="text-[9px] text-[#FAF9F6]/40">
+                  <p className="text-[9px] text-[#FAF9F6]/60">
                     10.9968° N | 76.0125° E
                   </p>
                 </div>
@@ -141,7 +141,7 @@ export default function Contact() {
                   href="https://maps.google.com/?q=Kottakkal+Municipality"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-[8.5px] font-bold text-[#C9A14A] uppercase tracking-wider hover:text-white transition-colors border-b border-[#C9A14A]/20 pb-0.5"
+                  className="inline-flex items-center text-[8.5px] font-bold text-[#D4B066] uppercase tracking-wider hover:text-white transition-colors border-b border-[#D4B066]/30 pb-0.5"
                 >
                   Open in Google Maps →
                 </a>
@@ -161,7 +161,7 @@ export default function Contact() {
               <h3 className="text-2xl font-light font-heading text-[#071120] mb-2">
                 Send a Message
               </h3>
-              <p className="text-[#1E293B]/70 text-xs font-light">
+              <p className="text-[#1E293B]/80 text-xs font-light">
                 Fill in the details below. Our corporate relations coordinator will reach out to you within 24 hours.
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Name */}
                 <div className="space-y-1">
-                  <label htmlFor="name" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/45 block">
+                  <label htmlFor="name" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/60 block">
                     Full Name
                   </label>
                   <input
@@ -187,7 +187,7 @@ export default function Contact() {
 
                 {/* Email */}
                 <div className="space-y-1">
-                  <label htmlFor="email" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/45 block">
+                  <label htmlFor="email" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/60 block">
                     Email Address
                   </label>
                   <input
@@ -206,7 +206,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Company Name */}
                 <div className="space-y-1">
-                  <label htmlFor="company" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/45 block">
+                  <label htmlFor="company" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/60 block">
                     Company / Organization
                   </label>
                   <input
@@ -222,7 +222,7 @@ export default function Contact() {
 
                 {/* Service Dropdown */}
                 <div className="space-y-1 relative">
-                  <label htmlFor="service" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/45 block">
+                  <label htmlFor="service" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/60 block">
                     Interested Service
                   </label>
                   <select
@@ -241,7 +241,7 @@ export default function Contact() {
                     <option value="Venture Development">Venture Development</option>
                     <option value="Project Development & Execution">Project Development & Execution</option>
                   </select>
-                  <div className="absolute right-0 bottom-2 pointer-events-none text-xs text-[#071120]/40">
+                  <div className="absolute right-0 bottom-2 pointer-events-none text-xs text-[#071120]/55">
                     ▼
                   </div>
                 </div>
@@ -249,7 +249,7 @@ export default function Contact() {
 
               {/* Message */}
               <div className="space-y-1">
-                <label htmlFor="message" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/45 block">
+                <label htmlFor="message" className="text-[9px] font-bold uppercase tracking-widest text-[#071120]/60 block">
                   Brief Message
                 </label>
                 <textarea
@@ -281,7 +281,7 @@ export default function Contact() {
                 ) : isSubmitted ? (
                   <>
                     <span>Message Dispatched</span>
-                    <CheckCircle className="w-4 h-4 text-[#C9A14A]" />
+                    <CheckCircle className="w-4 h-4 text-[#9A7428]" />
                   </>
                 ) : (
                   <>

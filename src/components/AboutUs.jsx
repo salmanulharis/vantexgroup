@@ -59,7 +59,7 @@ export default function AboutUs() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-[#071120]/5">
               {values.map((val, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <div className="w-4 h-4 rounded-full bg-[#C9A14A]/10 flex items-center justify-center text-[#C9A14A]">
+                  <div className="w-4 h-4 rounded-full bg-[#C9A14A]/10 flex items-center justify-center text-[#9A7428]">
                     <BookmarkCheck className="w-2.5 h-2.5" />
                   </div>
                   <span className="text-[11px] font-bold tracking-wider text-[#071120] uppercase">
@@ -84,7 +84,7 @@ export default function AboutUs() {
             className="space-y-4"
           >
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-[#C9A14A]/10 text-[#C9A14A]">
+              <div className="p-2 bg-[#C9A14A]/10 text-[#9A7428]">
                 <Eye className="w-4 h-4 stroke-[1.5]" />
               </div>
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#071120]">

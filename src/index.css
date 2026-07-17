@@ -3,8 +3,10 @@
 @theme {
   --color-primary-navy: #0A192F;
   --color-navy-dark: #071120;
-  --color-accent-gold: #C9A14A;
-  --color-gold-dark: #B38E3F;
+  --color-accent-gold: #9A7428;
+  --color-accent-gold-light: #C9A14A;
+  --color-gold-dark: #7A5C20;
+  --color-accent-gold-on-dark: #D4B066;
   --color-charcoal: #1E293B;
   --color-light-gray: #FAF9F6;
   --color-alabaster: #FAF9F6;
@@ -49,7 +51,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9A14A;
+  background: var(--color-accent-gold-light);
 }
 
 /* Accessible Reduced Motion Support */
@@ -128,7 +130,7 @@ body {
   height: 1px;
   bottom: -2px;
   left: 0;
-  background-color: var(--color-accent-gold);
+  background-color: var(--color-accent-gold-light);
   transform-origin: bottom right;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -189,8 +191,8 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  border: 1px solid var(--color-accent-gold);
-  background-color: var(--color-accent-gold);
+  border: 1px solid var(--color-accent-gold-light);
+  background-color: var(--color-accent-gold-light);
   color: var(--color-navy-dark);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
@@ -239,7 +241,7 @@ body {
 }
 
 .input-editorial:focus {
-  border-color: var(--color-accent-gold);
+  border-color: var(--color-accent-gold-light);
 }
 
 .input-editorial::placeholder {

@@ -100,7 +100,7 @@ export default function Services() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="lg:col-span-5"
           >
-            <p className="text-[#1E293B]/70 text-sm font-light leading-relaxed">
+            <p className="text-[#1E293B]/80 text-sm font-light leading-relaxed">
               We deliver actionable strategies and hands-on execution frameworks designed to accelerate institutional growth and unlock multi-dimensional enterprise value.
             </p>
           </motion.div>
@@ -135,11 +135,11 @@ export default function Services() {
                   
                   {/* Left row summary */}
                   <div className="flex items-center gap-6 md:gap-10">
-                    <span className="text-[13px] font-bold text-[#C9A14A] font-sans">
+                    <span className="text-[13px] font-bold text-[#9A7428] font-sans">
                       {numStr}
                     </span>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 text-[#071120]/60 group-hover:text-[#C9A14A] transition-colors">
+                      <div className="w-5 h-5 text-[#071120]/60 group-hover:text-[#9A7428] transition-colors">
                         <Icon className="w-full h-full stroke-[1.5]" />
                       </div>
                       <h3 className="heading-sub font-normal text-lg md:text-xl group-hover:translate-x-1 transition-transform duration-300">
@@ -149,7 +149,7 @@ export default function Services() {
                   </div>
 
                   {/* Toggle Indicator */}
-                  <div className="flex items-center gap-2 self-end md:self-auto text-xs font-semibold uppercase tracking-wider text-[#071120]/45 group-hover:text-[#C9A14A] transition-colors">
+                  <div className="flex items-center gap-2 self-end md:self-auto text-xs font-semibold uppercase tracking-wider text-[#071120]/60 group-hover:text-[#9A7428] transition-colors">
                     <span className="hidden md:inline">Details</span>
                     <motion.div
                       animate={{ rotate: isOpen ? 90 : 0 }}
@@ -172,7 +172,7 @@ export default function Services() {
                       className="overflow-hidden"
                     >
                       <div className="pl-12 md:pl-16 pr-4 pt-4 pb-2 max-w-2xl">
-                        <p className="text-[#1E293B]/70 text-[13.5px] leading-relaxed font-light">
+                        <p className="text-[#1E293B]/80 text-[13.5px] leading-relaxed font-light">
                           {service.description}
                         </p>
                       </div>

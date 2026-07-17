@@ -44,7 +44,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#071120] text-[#FAF9F6]/50 border-t border-[#FAF9F6]/5 py-12 md:py-20 select-none">
+    <footer className="bg-[#071120] text-[#FAF9F6]/65 border-t border-[#FAF9F6]/5 py-12 md:py-20 select-none">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
@@ -52,13 +52,13 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6">
             <a href="#home" onClick={(e) => handleScrollTo(e, "home")} className="flex items-center gap-3 group">
               <div className="w-8 h-8 flex items-center justify-center">
-                <Logo className="w-full h-full object-contain" />
+                <Logo className="w-full h-full object-contain" variant="dark" />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-lg font-light tracking-[0.18em] text-white font-heading">
                   VANTEX
                 </span>
-                <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-[#C9A14A] mt-0.5">
+                <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-[#D4B066] mt-0.5">
                   Group
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 border border-white/10 text-white/50 flex items-center justify-center hover:border-[#C9A14A] hover:text-[#C9A14A] transition-all duration-300"
+                className="w-8 h-8 border border-white/10 text-white/65 flex items-center justify-center hover:border-[#D4B066] hover:text-[#D4B066] transition-all duration-300"
                 aria-label="LinkedIn Profile"
               >
                 <LinkedInIcon className="w-3.5 h-3.5" />
@@ -81,7 +81,7 @@ export default function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 border border-white/10 text-white/50 flex items-center justify-center hover:border-[#C9A14A] hover:text-[#C9A14A] transition-all duration-300"
+                className="w-8 h-8 border border-white/10 text-white/65 flex items-center justify-center hover:border-[#D4B066] hover:text-[#D4B066] transition-all duration-300"
                 aria-label="Twitter Profile"
               >
                 <TwitterIcon className="w-3.5 h-3.5" />
@@ -97,22 +97,22 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-xs font-light">
               <li>
-                <a href="#home" onClick={(e) => handleScrollTo(e, "home")} className="hover:text-[#C9A14A] transition-colors">
+                <a href="#home" onClick={(e) => handleScrollTo(e, "home")} className="hover:text-[#D4B066] transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" onClick={(e) => handleScrollTo(e, "about")} className="hover:text-[#C9A14A] transition-colors">
+                <a href="#about" onClick={(e) => handleScrollTo(e, "about")} className="hover:text-[#D4B066] transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#D4B066] transition-colors">
                   Our Services
                 </a>
               </li>
               <li>
-                <a href="#why-choose-us" onClick={(e) => handleScrollTo(e, "why-choose-us")} className="hover:text-[#C9A14A] transition-colors">
+                <a href="#why-choose-us" onClick={(e) => handleScrollTo(e, "why-choose-us")} className="hover:text-[#D4B066] transition-colors">
                   Why Vantex
                 </a>
               </li>
@@ -126,22 +126,22 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 text-xs font-light">
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#D4B066] transition-colors">
                   Strategic Advisory
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#D4B066] transition-colors">
                   Business Development
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#D4B066] transition-colors">
                   Market Expansion
                 </a>
               </li>
               <li>
-                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#C9A14A] transition-colors">
+                <a href="#services" onClick={(e) => handleScrollTo(e, "services")} className="hover:text-[#D4B066] transition-colors">
                   Healthcare Advisory
                 </a>
               </li>
@@ -155,20 +155,20 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3.5">
               <li className="flex gap-3">
-                <MapPin className="w-3.5 h-3.5 text-[#C9A14A] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-3.5 h-3.5 text-[#D4B066] flex-shrink-0 mt-0.5" />
                 <span>
                   Ernahikal Arcade, Near Kottakkal Municipality, Kottakkal, India
                 </span>
               </li>
               <li className="flex gap-3">
-                <Mail className="w-3.5 h-3.5 text-[#C9A14A] flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@vantegroup.org" className="hover:text-[#C9A14A] transition-colors">
+                <Mail className="w-3.5 h-3.5 text-[#D4B066] flex-shrink-0 mt-0.5" />
+                <a href="mailto:info@vantegroup.org" className="hover:text-[#D4B066] transition-colors">
                   info@vantegroup.org
                 </a>
               </li>
               <li className="flex gap-3">
-                <Phone className="w-3.5 h-3.5 text-[#C9A14A] flex-shrink-0 mt-0.5" />
-                <a href="tel:+919946430289" className="hover:text-[#C9A14A] transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#D4B066] flex-shrink-0 mt-0.5" />
+                <a href="tel:+919946430289" className="hover:text-[#D4B066] transition-colors">
                   +91 99464 30289
                 </a>
               </li>

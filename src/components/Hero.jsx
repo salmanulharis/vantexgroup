@@ -15,7 +15,7 @@ export default function Hero() {
       description: "Collaborating with organizations, communities, and leaders.",
     },
     {
-      value: "30+",
+      value: "100+",
       label: "Leadership Meetings",
       description: "Engaging directly with founders and institutional executives.",
     },
@@ -88,7 +88,7 @@ export default function Hero() {
               className="heading-display text-transparent bg-clip-text bg-gradient-to-br from-[#071120] via-[#0A192F] to-[#1E293B]"
             >
               Building businesses.<br />
-              <span className="font-light italic text-[#C9A14A]">Creating value.</span>
+              <span className="font-light italic text-[#9A7428]">Creating value.</span>
             </motion.h1>
 
             <motion.p
@@ -133,13 +133,13 @@ export default function Hero() {
                 className="group flex flex-col justify-between"
               >
                 <div>
-                  <div className="text-3xl sm:text-4xl font-light text-[#C9A14A] font-heading leading-none mb-1">
+                  <div className="text-3xl sm:text-4xl font-light text-[#9A7428] font-heading leading-none mb-1">
                     {stat.value}
                   </div>
                   <div className="text-[10px] font-bold text-[#071120] uppercase tracking-wider mb-1.5">
                     {stat.label}
                   </div>
-                  <div className="text-xs text-[#1E293B]/70 leading-relaxed font-light">
+                  <div className="text-xs text-[#1E293B]/80 leading-relaxed font-light">
                     {stat.description}
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export default function Hero() {
           className="flex justify-center items-center gap-3 pt-8 lg:pt-0 select-none cursor-pointer"
           onClick={(e) => handleScrollTo(e, "trusted-partner")}
         >
-          <span className="text-[9px] uppercase tracking-[0.25em] text-[#071120]/40 font-medium">Scroll to explore</span>
+          <span className="text-[9px] uppercase tracking-[0.25em] text-[#071120]/55 font-medium">Scroll to explore</span>
           <div className="w-[1px] h-8 bg-[#071120]/10 relative overflow-hidden">
             <motion.div
               animate={{ y: ["0%", "100%"] }}

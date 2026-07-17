@@ -73,7 +73,7 @@ export default function GrowthProcess() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="lg:col-span-5"
           >
-            <p className="text-[#1E293B]/70 text-sm font-light leading-relaxed">
+            <p className="text-[#1E293B]/80 text-sm font-light leading-relaxed">
               We follow a structured 5-step growth process, turning strategic vision into tangible value.
             </p>
           </motion.div>
@@ -99,10 +99,10 @@ export default function GrowthProcess() {
                 }}
               >
                 <div className="flex items-center gap-4">
-                  <span className={`text-xs font-bold font-sans ${activeStep === idx ? "text-[#C9A14A]" : "text-[#071120]/40"}`}>
+                  <span className={`text-xs font-bold font-sans ${activeStep === idx ? "text-[#9A7428]" : "text-[#071120]/55"}`}>
                     {step.phase}
                   </span>
-                  <h3 className={`text-base tracking-wider uppercase font-semibold ${activeStep === idx ? "text-[#071120]" : "text-[#071120]/60"}`}>
+                  <h3 className={`text-base tracking-wider uppercase font-semibold ${activeStep === idx ? "text-[#071120]" : "text-[#071120]/70"}`}>
                     {step.title}
                   </h3>
                 </div>
@@ -125,15 +125,15 @@ export default function GrowthProcess() {
                   className="space-y-6"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-[#C9A14A]/10 text-[#C9A14A] flex items-center justify-center">
+                    <div className="w-10 h-10 bg-[#C9A14A]/10 text-[#9A7428] flex items-center justify-center">
                       <Icon className="w-5 h-5 stroke-[1.5]" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-bold text-[#C9A14A] tracking-wider uppercase">Phase {step.phase}</span>
+                      <span className="text-[10px] font-bold text-[#9A7428] tracking-wider uppercase">Phase {step.phase}</span>
                       <h4 className="heading-sub font-normal text-2xl">{step.title}</h4>
                     </div>
                   </div>
-                  <p className="text-[#1E293B]/70 leading-relaxed font-light text-[15px]">
+                  <p className="text-[#1E293B]/80 leading-relaxed font-light text-[15px]">
                     {step.description}
                   </p>
                 </motion.div>
@@ -155,7 +155,7 @@ export default function GrowthProcess() {
                   onClick={() => setActiveStep(isOpen ? -1 : idx)}
                 >
                   <div className="flex items-center gap-4">
-                    <span className="text-xs font-bold text-[#C9A14A]">{step.phase}</span>
+                    <span className="text-xs font-bold text-[#9A7428]">{step.phase}</span>
                     <h3 className="text-base tracking-wider uppercase font-semibold text-[#071120]">
                       {step.title}
                     </h3>
@@ -175,11 +175,11 @@ export default function GrowthProcess() {
                       className="overflow-hidden"
                     >
                       <div className="pt-4 pl-8 space-y-4">
-                        <div className="flex items-center gap-3 text-[#C9A14A]">
+                        <div className="flex items-center gap-3 text-[#9A7428]">
                           <Icon className="w-4 h-4 stroke-[1.5]" />
                           <span className="text-[10px] font-bold uppercase tracking-wider">Phase {step.phase} Details</span>
                         </div>
-                        <p className="text-xs text-[#1E293B]/70 leading-relaxed font-light">
+                        <p className="text-xs text-[#1E293B]/80 leading-relaxed font-light">
                           {step.description}
                         </p>
                       </div>

@@ -75,7 +75,7 @@ export default function Navbar() {
               <span className="text-lg font-light tracking-[0.18em] font-heading text-[#071120]">
                 VANTEX
               </span>
-              <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-[#C9A14A] mt-0.5">
+              <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-[#9A7428] mt-0.5">
                 Group
               </span>
             </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
                   className={`text-[10.5px] font-semibold uppercase tracking-widest transition-all duration-300 relative py-1 link-underline ${
-                    isActive ? "text-[#C9A14A] font-bold" : "text-[#071120]/65 hover:text-[#071120]"
+                    isActive ? "text-[#9A7428] font-bold" : "text-[#071120]/75 hover:text-[#071120]"
                   }`}
                 >
                   {link.name}
@@ -172,7 +172,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     className={`text-3xl font-light font-heading tracking-wide py-2 ${
-                      isActive ? "text-[#C9A14A]" : "text-[#071120]"
+                      isActive ? "text-[#9A7428]" : "text-[#071120]"
                     }`}
                   >
                     {link.name}

@@ -50,7 +50,7 @@ export default function TrustedPartner() {
             <h2 className="heading-editorial leading-tight">
               A Trusted Partner for Long-Term Corporate Growth
             </h2>
-            <blockquote className="italic font-heading text-xl text-[#C9A14A]/90 max-w-sm pt-4 leading-relaxed">
+            <blockquote className="italic font-heading text-xl text-[#9A7428] max-w-sm pt-4 leading-relaxed">
               "We bridge gaps between potential and realization, ensuring that strategic partnerships are formed on solid foundations."
             </blockquote>
           </motion.div>
@@ -79,14 +79,14 @@ export default function TrustedPartner() {
                 return (
                   <div key={idx} className="group space-y-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-none bg-[#C9A14A]/10 text-[#C9A14A] flex items-center justify-center">
+                      <div className="w-5 h-5 rounded-none bg-[#C9A14A]/10 text-[#9A7428] flex items-center justify-center">
                         <Icon className="w-3.5 h-3.5 stroke-[1.5]" />
                       </div>
                       <h4 className="text-xs font-bold uppercase tracking-wider text-[#071120]">
                         {item.title}
                       </h4>
                     </div>
-                    <p className="text-[12.5px] text-[#1E293B]/70 leading-relaxed font-light pl-8">
+                    <p className="text-[12.5px] text-[#1E293B]/80 leading-relaxed font-light pl-8">
                       {item.description}
                     </p>
                   </div>

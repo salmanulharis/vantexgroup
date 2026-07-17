@@ -45,7 +45,7 @@ export default function LoadingScreen() {
               <h1 className="text-xl font-light tracking-[0.25em] text-white font-heading">
                 VANTEX
               </h1>
-              <p className="text-[9px] uppercase tracking-[0.4em] text-[#C9A14A] font-semibold">
+              <p className="text-[9px] uppercase tracking-[0.4em] text-[#9A7428] font-semibold">
                 Building Value
               </p>
             </motion.div>

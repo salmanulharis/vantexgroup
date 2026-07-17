@@ -21,7 +21,7 @@ export default function LeadershipPhilosophy() {
           whileInView={{ opacity: 0.05, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -40px 0px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-center text-[#C9A14A] will-change-transform pointer-events-none select-none"
+          className="flex justify-center text-[#9A7428] will-change-transform pointer-events-none select-none"
         >
           <Quote className="w-24 h-24 stroke-[1]" />
         </motion.div>
@@ -48,7 +48,7 @@ export default function LeadershipPhilosophy() {
             <p className="text-[10px] font-bold tracking-[0.25em] text-[#071120] font-sans uppercase">
               VANTEX GROUP
             </p>
-            <p className="text-[9px] uppercase tracking-[0.2em] text-[#1E293B]/50 font-semibold">
+            <p className="text-[9px] uppercase tracking-[0.2em] text-[#1E293B]/65 font-semibold">
               Corporate Governance & Growth Creed
             </p>
           </div>

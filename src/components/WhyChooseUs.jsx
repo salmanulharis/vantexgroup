@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
               >
                 <div className="space-y-4">
                   {/* Styled minimalist icon container */}
-                  <div className="w-7 h-7 bg-[#071120]/5 text-[#071120]/70 flex items-center justify-center group-hover:bg-[#C9A14A] group-hover:text-[#FAF9F6] transition-colors duration-300">
+                  <div className="w-7 h-7 bg-[#071120]/5 text-[#071120]/75 flex items-center justify-center group-hover:bg-[#C9A14A] group-hover:text-[#FAF9F6] transition-colors duration-300">
                     <Icon className="w-4 h-4 stroke-[1.5]" />
                   </div>
                   
@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
                     <h3 className="text-[15px] font-bold uppercase tracking-wider text-[#071120]">
                       {adv.title}
                     </h3>
-                    <p className="text-[12.5px] text-[#1E293B]/70 leading-relaxed font-light">
+                    <p className="text-[12.5px] text-[#1E293B]/80 leading-relaxed font-light">
                       {adv.description}
                     </p>
                   </div>
